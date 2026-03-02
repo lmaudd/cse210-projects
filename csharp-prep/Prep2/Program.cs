@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Obtain grade from user, convert to integer
+        // Obtain grade from user, convert to float
         Console.Write("What is you grade percentage? ");
         string gradeString = Console.ReadLine();
         float grade = float.Parse(gradeString);
