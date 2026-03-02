@@ -14,26 +14,31 @@ class Program
         if (grade >= 90) // Grade A
         {
             Console.WriteLine("Your grade: A");
+            Console.WriteLine("Congratulations! That is a passing grade.");
         }
 
         else if (grade >= 80) // Grade B
         {
             Console.WriteLine("Your grade: B");
+            Console.WriteLine("Congratulations! That is a passing grade.");
         }
 
         else if (grade >= 70) // Grade C
         {
             Console.WriteLine("Your grade: C");
+            Console.WriteLine("Congratulations! That is a passing grade.");
         }
 
         else if (grade >= 60) // Grade D
         {
             Console.WriteLine("Your grade: D");
+            Console.WriteLine("Unfortunately, this is not a passing grade.");
         }
 
         else // Grade F
         {
             Console.WriteLine("Your grade: F");
+            Console.WriteLine("Unfortunately, this is not a passing grade.");
         }
     }
 }
