@@ -7,10 +7,8 @@ class Program
         // Establish magic number
         Console.WriteLine(" ");
         Console.WriteLine("----------------------------------");
-        Console.Write("What is your magic number? "); // Ask question
-        string magicNumberInput = Console.ReadLine(); // Store answer as string
-        int magicNumber = int.Parse(magicNumberInput); // Store number as int
-        Console.WriteLine(" ");
+        Random randomGenerator = new Random();
+        int magicNumber = randomGenerator.Next(11); // Random number between 0 and 10
         
         // Initialize loop condition
         bool cont = true;
@@ -23,17 +21,8 @@ class Program
             string guessInput = Console.ReadLine();
             int guess = int.Parse(guessInput);
 
-            // Victory condition
-            if (guess == magicNumber)
-            {
-                Console.WriteLine(" ");
-                Console.WriteLine("Correct!");
-                Console.WriteLine("----------------------------------");
-                cont = false;
-            }
-
             // Too high
-            else if (guess < magicNumber)
+            if (guess < magicNumber)
             {
                 Console.WriteLine("Higher");
             }
@@ -42,6 +31,14 @@ class Program
             else if (guess > magicNumber)
             {
                 Console.WriteLine("Lower");
+            }
+
+            // Victory condition
+            else if (guess == magicNumber)
+            {
+                Console.WriteLine("Correct!");
+                Console.WriteLine("----------------------------------");
+                cont = false;
             }
         }
     }
