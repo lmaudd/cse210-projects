@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Obtain user input
+        // Obtain user input.
         Console.WriteLine(" ");
         Console.WriteLine("Welcome to the program!");
 
