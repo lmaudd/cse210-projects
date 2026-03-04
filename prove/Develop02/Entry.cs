@@ -3,14 +3,13 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Entry
 {
-    // Need to update _prompt when Prompt.cs works
-
     // Define member variables (responsibilities)
-    public string _prompt = ""; // Pull a random prompt and store here
+    static Prompts prompt;
+    public string _prompt = prompt.PromptSelection(); // Pull a random prompt and store here
 
     static DateTime time = DateTime.Now; // Get current date from datetime
     public string _date = time.ToShortDateString(); // date -> string as "mm/dd/yyyy"
-    
+
     public string _answer; // Store answer here
 
     // Define methods
