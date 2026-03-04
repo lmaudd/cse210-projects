@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-       // Empty
+        // Test Entry.cs & Prompts.cs
+        Entry entry = new Entry();
+        entry.PromptUser();
+        entry.Display();
     }
 }

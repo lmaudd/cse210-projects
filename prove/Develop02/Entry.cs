@@ -4,7 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 public class Entry
 {
     // Define member variables (responsibilities)
-    static Prompts prompt;
+    static Prompts prompt = new Prompts();
     public string _prompt = prompt.PromptSelection(); // Pull a random prompt and store here
 
     static DateTime time = DateTime.Now; // Get current date from datetime
