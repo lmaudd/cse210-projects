@@ -7,8 +7,10 @@ public class Entry
 
     // Define member variables (responsibilities)
     public string _prompt = ""; // Pull a random prompt and store here
+
     static DateTime time = DateTime.Now; // Get current date from datetime
     public string _date = time.ToShortDateString(); // date -> string as "mm/dd/yyyy"
+    
     public string _answer; // Store answer here
 
     // Define methods

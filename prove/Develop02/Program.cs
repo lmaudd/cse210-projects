@@ -4,9 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-       // DT Practice
-       DateTime theCurrentTime = DateTime.Now;
-       string dateText = theCurrentTime.ToShortDateString();
-       Console.WriteLine(dateText);
+       // List Practice
+       List<string> myList = new List<String> { "C#", "Java", "Javascript" };
+       
+        foreach (string listElement in myList) 
+        {
+            Console.WriteLine(listElement);
+        }
     }
 }
