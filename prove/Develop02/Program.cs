@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+       // DT Practice
+       DateTime theCurrentTime = DateTime.Now;
+       string dateText = theCurrentTime.ToShortDateString();
+       Console.WriteLine(dateText);
     }
 }
