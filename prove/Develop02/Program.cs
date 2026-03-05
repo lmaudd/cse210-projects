@@ -16,54 +16,46 @@ class Program
             PrintMenu();
             string userInput = Console.ReadLine();
 
-            if (userInput == "1")
+            if (userInput == "1") // Write journal entry
             {
-                
+                journal.GetEntry();
             }
 
-            else if (userInput == "2")
+            else if (userInput == "2") // Display all journals
             {
-                
+                journal.DisplayAll();
             }
 
-            else if (userInput == "3")
+            else if (userInput == "3") // Load specific journal entry
             {
-                
+                Console.Write("Unfinished.");
             }
 
-            else if (userInput == "4")
+            else if (userInput == "4") // Save changes to journal
             {
-                
+                Console.Write("Unfinished.");
             }
 
-            else if (userInput == "5")
+            else if (userInput == "5") // Quit Application
             {
-                
+                Console.Write("Thank you for using our application.");
+                break;
             }
 
             else
             {
-
+                Console.Write("Unfinished.");
             }
-        
         }
-
-        journal.DisplayAll();
     }
 
     static void PrintMenu()
     {
-        Console.Write("Please Select an Option");
-        Console.Write("   1. Write");
-        Console.Write("   2. Display");
-        Console.Write("   3. Load");
-        Console.Write("   4. Save");
-        Console.Write("   5. Quit");
+        Console.WriteLine("Please Select an Option");
+        Console.WriteLine("   1. Write");
+        Console.WriteLine("   2. Display");
+        Console.WriteLine("   3. Load");
+        Console.WriteLine("   4. Save");
+        Console.WriteLine("   5. Quit");
     }
 }
-
-
-            journal.GetEntry();
-
-            Console.Write("Would you like to continue? (0=yes): ");
-            loopCondition = Console.ReadLine();
