@@ -16,7 +16,7 @@ public class Entry
         _prompt =  prompt;
         _answer = answer;
 
-        if date()
+        if (date)
         {
             _date = date;    
         }
