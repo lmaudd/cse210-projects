@@ -25,13 +25,13 @@ public class Journal
 
     public void DisplayAll()
     {
+        Console.WriteLine(" ");
+        Console.WriteLine("All Journal Entries");
         foreach (Entry item in _entries)
         {
-            Console.WriteLine(" ");
-            Console.WriteLine("All Journal Entries");
             Console.WriteLine($"  - Date: {item._date} - Prompt: {item._prompt}");
             Console.WriteLine($"    {item._answer}");
-            Console.WriteLine(" ");
         }
+         Console.WriteLine(" ");
     }
 }
