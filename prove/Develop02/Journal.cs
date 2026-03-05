@@ -4,6 +4,8 @@ public class Journal
 {
     // Define member variables (responsibilities)
     public List<Entry> _entries = new List<Entry>();
+    public string _name;
+    public string _pin;
 
     // Define methods
     public void GetEntry()
@@ -18,11 +20,6 @@ public class Journal
         _entries.Add(entry);
     }
 
-    public void Display()
-    {
-        Console.WriteLine("Empty");
-    }
-
     public void DisplayAll()
     {
         Console.WriteLine(" ");
@@ -33,5 +30,15 @@ public class Journal
             Console.WriteLine($"    {item._answer}");
         }
          Console.WriteLine(" ");
+    }
+
+    public void Save()
+    {
+        
+    }
+
+    public void Load()
+    {
+
     }
 }

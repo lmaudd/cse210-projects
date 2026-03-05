@@ -26,12 +26,12 @@ class Program
                 journal.DisplayAll();
             }
 
-            else if (userInput == "3") // Load specific journal entry
+            else if (userInput == "3") // Load from file
             {
                 Console.Write("Unfinished.");
             }
 
-            else if (userInput == "4") // Save changes to journal
+            else if (userInput == "4") // Save to file
             {
                 Console.Write("Unfinished.");
             }
