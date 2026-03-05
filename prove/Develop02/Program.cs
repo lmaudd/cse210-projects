@@ -33,7 +33,7 @@ class Program
 
             else if (userInput == "4") // Save to file
             {
-                Console.Write("Unfinished.");
+                journal.Save();
             }
 
             else if (userInput == "5") // Quit Application

@@ -1,11 +1,12 @@
 using System;
+using System.IO;
 
 public class Journal
 {
     // Define member variables (responsibilities)
     public List<Entry> _entries = new List<Entry>();
-    public string _name;
     public string _pin;
+    public string _fileName;
 
     // Define methods
     public void GetEntry()
@@ -34,7 +35,23 @@ public class Journal
 
     public void Save()
     {
-        
+        Console.WriteLine(" ");
+        Console.WriteLine("Saving Journal...");
+        Console.Write("  - Please set a pin (4#): ");
+        _pin = Console.ReadLine();
+        Console.Write("  - Please choose a filename (.txt): ");
+        _fileName = Console.ReadLine(); 
+
+        using (StreamWriter outputFile = new StreamWriter(_fileName))
+        {
+            outputFile.WriteLine(_pin); // Begin by saving pin
+            foreach (Entry item in _entries) // Save data
+            {
+                outputFile.WriteLine($"{item._date} ~ {item._prompt} ~ {item._answer}");
+            }
+        }
+
+        Console.Write("  - Saving complete. ");
     }
 
     public void Load()
