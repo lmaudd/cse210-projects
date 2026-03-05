@@ -27,8 +27,11 @@ public class Journal
     {
         foreach (Entry item in _entries)
         {
-            Console.WriteLine($"Date: {item._date} - Prompt: {item._prompt}");
-            Console.WriteLine(item._answer);
+            Console.WriteLine(" ");
+            Console.WriteLine("All Journal Entries");
+            Console.WriteLine($"  - Date: {item._date} - Prompt: {item._prompt}");
+            Console.WriteLine($"    {item._answer}");
+            Console.WriteLine(" ");
         }
     }
 }
