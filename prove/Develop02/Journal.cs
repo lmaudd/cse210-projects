@@ -18,10 +18,10 @@ public class Journal
         _entries.Add(entry);
     }
 
-    // public void Display()
-    // {
-    //     Console.WriteLine("Empty");
-    // }
+    public void Display()
+    {
+        Console.WriteLine("Empty");
+    }
 
     public void DisplayAll()
     {
