@@ -1,27 +1,19 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
+using System.Dynamic;
 
 public class Entry
 {
     // Define member variables (responsibilities)
-    static Prompts prompt = new Prompts();
-    public string _prompt = prompt.PromptSelection(); // Pull a random prompt and store here
-
     static DateTime time = DateTime.Now; // Get current date from datetime
     public string _date = time.ToShortDateString(); // date -> string as "mm/dd/yyyy"
 
+    public string _prompt;
     public string _answer; // Store answer here
 
     // Define methods
-    public void PromptUser()
+    public void StoreInformation(string prompt, string answer)
     {
-        Console.WriteLine(_prompt);
-        _answer = Console.ReadLine();
-    }
-
-    public void Display()
-    {
-        Console.WriteLine($"Date: {_date} - Prompt: {_prompt}");
-        Console.WriteLine(_answer);
+       _prompt =  prompt;
+       _answer = answer;
     }
 }

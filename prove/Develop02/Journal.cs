@@ -6,18 +6,29 @@ public class Journal
     public List<Entry> _entries = new List<Entry>();
 
     // Define methods
-    public void FormString()
+    public void GetEntry()
     {
-   
+        Prompts prompt = new Prompts();
+        string newPrompt = prompt.PromptSelection();
+        Console.WriteLine(newPrompt);
+        string answer = Console.ReadLine();
+
+        Entry entry = new Entry();
+        entry.StoreInformation(newPrompt, answer);
+        _entries.Add(entry);
     }
 
-    public void Display()
-    {
-   
-    }
+    // public void Display()
+    // {
+    //     Console.WriteLine("Empty");
+    // }
 
     public void DisplayAll()
     {
-   
+        foreach (Entry item in _entries)
+        {
+            Console.WriteLine($"Date: {item._date} - Prompt: {item._prompt}");
+            Console.WriteLine(item._answer);
+        }
     }
 }
