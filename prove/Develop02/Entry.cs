@@ -11,9 +11,13 @@ public class Entry
     public string _answer; // Store answer here
 
     // Define methods
-    public void StoreInformation(string prompt, string answer)
+    public void StoreInformation(string prompt, string answer, string date)
     {
-       _prompt =  prompt;
-       _answer = answer;
-    }
+        _prompt =  prompt;
+        _answer = answer;
+
+        if date()
+        {
+            _date = date;    
+        }
 }

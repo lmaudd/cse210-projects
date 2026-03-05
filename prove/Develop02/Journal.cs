@@ -5,8 +5,6 @@ public class Journal
 {
     // Define member variables (responsibilities)
     public List<Entry> _entries = new List<Entry>();
-    public string _pin;
-    public string _fileName;
 
     // Define methods
     public void GetEntry()
@@ -37,14 +35,16 @@ public class Journal
     {
         Console.WriteLine(" ");
         Console.WriteLine("Saving Journal...");
-        Console.Write("  - Please set a pin (4#): ");
-        _pin = Console.ReadLine();
-        Console.Write("  - Please choose a filename (.txt): ");
-        _fileName = Console.ReadLine(); 
 
-        using (StreamWriter outputFile = new StreamWriter(_fileName))
+        Console.Write("  - Please set a pin (4#): ");
+        string pin = Console.ReadLine();
+
+        Console.Write("  - Please choose a filename (.txt): ");
+        string fileName = Console.ReadLine(); 
+
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            outputFile.WriteLine(_pin); // Begin by saving pin
+            outputFile.WriteLine(pin); // Begin by saving pin
             foreach (Entry item in _entries) // Save data
             {
                 outputFile.WriteLine($"{item._date} ~ {item._prompt} ~ {item._answer}");
@@ -55,7 +55,27 @@ public class Journal
     }
 
     public void Load()
-    {
+    {   
+        Console.WriteLine(" ");
+        Console.WriteLine("Loading Journal...");
 
+        Console.Write("  - What is your pin? ");
+        string pin = Console.ReadLine();
+
+        Console.Write("  - What is your file named? ");
+        string fileName = Console.ReadLine(); 
+        string[] lines = System.IO.File.ReadAllLines(fileName);
+
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("~");
+
+            string date = parts[0];
+            string prompt = parts[1];
+            string answer = parts[1];
+
+            Entry entry = new Entry();
+            entry.StoreInformation(prompt, answer, date);
+        }
     }
 }
