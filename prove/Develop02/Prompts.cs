@@ -7,15 +7,17 @@ public class Prompts
     // Resource: https://www.geeksforgeeks.org/c-sharp/list-implementation-in-c-sharp/
     public List<string> _prompts = new List<string> 
     {
-        "Prompt #1 placeholder", 
-        "Prompt #2 placeholder",
-        "Prompt #3 placeholder",
-        "Prompt #4 placeholder",
-        "Prompt #5 placeholder",
-        "Prompt #7 placeholder",
-        "Prompt #8 placeholder",
-        "Prompt #9 placeholder",
-        "Prompt #10 placeholder"
+        "hat was the best part of my day", 
+        "What about my day could have gone better?",
+        "What is one thing that inspired me today?",
+        "Name one good deed I did today.",
+        "Name one moment I felt peace today.",
+        "What am I excited about for tomorrow?",
+        "Did I make any new friends today?",
+        "If I had one thing I could do over today, what would it be?",
+        "What was the strongest emotion I felt today?",
+        "How did I see the hand of the Lord in my life today?",
+        "Who was the most interesting person I interacted with today?"
     };
 
     // Define methods
