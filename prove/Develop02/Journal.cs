@@ -18,7 +18,6 @@ public class Journal
         Console.WriteLine(" ");
         Console.WriteLine(newPrompt);
         string answer = Console.ReadLine();
-
         Entry entry = new Entry();
         entry.StoreInformation(date, newPrompt, answer);
         _entries.Add(entry);
@@ -39,13 +38,10 @@ public class Journal
     {
         Console.WriteLine(" ");
         Console.WriteLine("Saving Journal...");
-
-        Console.Write("  - Please set a pin (4#): ");
-        string pin = Console.ReadLine();
-
         Console.Write("  - Please choose a filename (.txt): ");
         string fileName = Console.ReadLine(); 
-
+        Console.Write("  - Please set a pin (4#): ");
+        string pin = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             outputFile.WriteLine(pin); // Begin by saving pin
