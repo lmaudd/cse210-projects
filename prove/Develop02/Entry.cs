@@ -4,20 +4,15 @@ using System.Dynamic;
 public class Entry
 {
     // Define member variables (responsibilities)
-    static DateTime time = DateTime.Now; // Get current date from datetime
-    public string _date = time.ToShortDateString(); // date -> string as "mm/dd/yyyy"
-
+    public string _date;
     public string _prompt;
-    public string _answer; // Store answer here
+    public string _answer;
 
     // Define methods
-    public void StoreInformation(string prompt, string answer, string date)
+    public void StoreInformation(string date, string prompt, string answer)
     {
         _prompt =  prompt;
         _answer = answer;
-
-        if (date)
-        {
-            _date = date;    
-        }
+        _date = date;
+    }
 }

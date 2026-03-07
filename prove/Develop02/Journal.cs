@@ -6,6 +6,10 @@ public class Journal
     // Define member variables (responsibilities)
     public List<Entry> _entries = new List<Entry>();
 
+    // Get Date
+    static DateTime time = DateTime.Now; // Get current date from datetime
+    static string date = time.ToShortDateString(); // date -> string as "mm/dd/yyyy"
+
     // Define methods
     public void GetEntry()
     {
@@ -15,7 +19,7 @@ public class Journal
         string answer = Console.ReadLine();
 
         Entry entry = new Entry();
-        entry.StoreInformation(newPrompt, answer);
+        entry.StoreInformation(date, newPrompt, answer);
         _entries.Add(entry);
     }
 
@@ -75,7 +79,7 @@ public class Journal
             string answer = parts[1];
 
             Entry entry = new Entry();
-            entry.StoreInformation(prompt, answer, date);
+            entry.StoreInformation(date, prompt, answer);
         }
     }
 }
