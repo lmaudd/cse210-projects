@@ -28,7 +28,7 @@ class Program
 
             else if (userInput == "3") // Load from file
             {
-                Console.Write("Unfinished.");
+                journal.Load();
             }
 
             else if (userInput == "4") // Save to file
@@ -39,12 +39,15 @@ class Program
             else if (userInput == "5") // Quit Application
             {
                 Console.Write("Thank you for using our application.");
+                Console.Write(" ");
                 break;
             }
 
             else
             {
-                Console.Write("Unfinished.");
+                Console.WriteLine(" ");
+                Console.WriteLine("Input not recognized. Try again.");
+                Console.Write(" ");
             }
         }
     }

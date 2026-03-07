@@ -15,6 +15,7 @@ public class Journal
     {
         Prompts prompt = new Prompts();
         string newPrompt = prompt.PromptSelection();
+        Console.WriteLine(" ");
         Console.WriteLine(newPrompt);
         string answer = Console.ReadLine();
 
@@ -32,7 +33,6 @@ public class Journal
             Console.WriteLine($"  - Date: {item._date} - Prompt: {item._prompt}");
             Console.WriteLine($"    {item._answer}");
         }
-         Console.WriteLine(" ");
     }
 
     public void Save()
@@ -54,7 +54,6 @@ public class Journal
                 outputFile.WriteLine($"{item._date} ~ {item._prompt} ~ {item._answer}");
             }
         }
-
         Console.Write("  - Saving complete. ");
         Console.WriteLine(" ");
     }
@@ -63,36 +62,34 @@ public class Journal
     {   
         Console.WriteLine(" ");
         Console.WriteLine("Loading Journal...");
-
-        Console.Write("  - What is your pin? ");
-        string pin = Console.ReadLine();
-
         Console.Write("  - What is your file named? ");
         string fileName = Console.ReadLine(); 
+        Console.Write("  - What is your pin? ");
+        string pin = Console.ReadLine();
         string[] lines = System.IO.File.ReadAllLines(fileName);
 
-        foreach (string line in lines)
+        if (lines.First() == pin)
         {
-            if (lines.First() == pin)
+            foreach (string line in lines)
             {
-                string[] parts = line.Split("~");
-
-                string date = parts[0];
-                string prompt = parts[1];
-                string answer = parts[1];
-
-                Entry entry = new Entry();
-                entry.StoreInformation(date, prompt, answer);
-
-                Console.WriteLine("Load successful.");
-                Console.WriteLine(" ");
+                if (line != lines.First())
+                {
+                    string[] parts = line.Split("~");
+                    string date = parts[0];
+                    string prompt = parts[1];
+                    string answer = parts[2];
+                    Entry entry = new Entry();
+                    entry.StoreInformation(date, prompt, answer);
+                    _entries.Add(entry);
+                }
             }
+            Console.WriteLine("  - Load successful.");
+        }
 
             else
-            {
-                Console.WriteLine("Incorrect password. Load Failed.");
-                Console.WriteLine(" ");
-            }
+        {
+            Console.WriteLine("Incorrect password. Load Failed.");
+            Console.WriteLine(" ");
         }
     }
 }
