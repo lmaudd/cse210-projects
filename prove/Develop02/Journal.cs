@@ -56,6 +56,7 @@ public class Journal
         }
 
         Console.Write("  - Saving complete. ");
+        Console.WriteLine(" ");
     }
 
     public void Load()
@@ -72,14 +73,26 @@ public class Journal
 
         foreach (string line in lines)
         {
-            string[] parts = line.Split("~");
+            if (lines.First() == pin)
+            {
+                string[] parts = line.Split("~");
 
-            string date = parts[0];
-            string prompt = parts[1];
-            string answer = parts[1];
+                string date = parts[0];
+                string prompt = parts[1];
+                string answer = parts[1];
 
-            Entry entry = new Entry();
-            entry.StoreInformation(date, prompt, answer);
+                Entry entry = new Entry();
+                entry.StoreInformation(date, prompt, answer);
+
+                Console.WriteLine("Load successful.");
+                Console.WriteLine(" ");
+            }
+
+            else
+            {
+                Console.WriteLine("Incorrect password. Load Failed.");
+                Console.WriteLine(" ");
+            }
         }
     }
 }
