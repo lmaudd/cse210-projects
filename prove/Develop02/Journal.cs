@@ -84,7 +84,7 @@ public class Journal
 
             else
         {
-            Console.WriteLine("Incorrect password. Load Failed.");
+            Console.WriteLine("  - Incorrect password. Load Failed.");
             Console.WriteLine(" ");
         }
     }

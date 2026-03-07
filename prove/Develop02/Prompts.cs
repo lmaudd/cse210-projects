@@ -7,7 +7,7 @@ public class Prompts
     // Resource: https://www.geeksforgeeks.org/c-sharp/list-implementation-in-c-sharp/
     public List<string> _prompts = new List<string> 
     {
-        "hat was the best part of my day", 
+        "What was the best part of my day", 
         "What about my day could have gone better?",
         "What is one thing that inspired me today?",
         "Name one good deed I did today.",
