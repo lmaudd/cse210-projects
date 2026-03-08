@@ -1,5 +1,11 @@
 using System;
-using System.Reflection;
+// using System.Reflection;
+
+// File: Prompts.cs
+//
+// Class Purpose: Define "Prompts" Class, which holds a list of prompts
+// and offers when to journal. Also supports prompt adding, though the 
+// main program currently does not utlize it. 
 
 public class Prompts
 {
@@ -24,7 +30,7 @@ public class Prompts
     public string PromptSelection()
     {
         Random randomGenerator = new Random();
-        int index = randomGenerator.Next(9); // Randomly select from indices 0-9
+        int index = randomGenerator.Next(9);   // Randomly select from indices 0-9
         string chosenPrompt = _prompts[index]; // Store corresponding prompt
         return chosenPrompt;
     }
