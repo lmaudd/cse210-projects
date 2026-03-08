@@ -50,6 +50,7 @@ class Program
 
             else if (userInput == "5") // Quit Application
             {
+                Console.Write(" ");
                 Console.Write("Thank you for using our application.");
                 Console.Write(" ");
                 break;

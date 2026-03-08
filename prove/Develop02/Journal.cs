@@ -14,7 +14,7 @@ public class Journal
     // Define responsibility to store all of the entries in our journal
     public List<Entry> _entries = new List<Entry>();
 
-    // Use DateTime to get/format the current date
+    // Use DateTime to get/format the current date (not _case b/c they aren't responsibilities)
     static DateTime time = DateTime.Now; // Get current date from datetime
     static string date = time.ToShortDateString(); // date -> string as "mm/dd/yyyy"
 
