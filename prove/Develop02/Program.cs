@@ -1,5 +1,17 @@
 using System;
-using System.Formats.Asn1;
+
+// File: Program.cs
+//
+// Program Purpose: Create a journal program to store write, store, save, and
+// load entries. It intends to address usual problems with journal writing,
+// such as convenience (digitizing it) and not knowing what to write (prompting).
+//
+// Above & Beyond: In my group, Kristen Lee and I discussed things we could do.
+// One such idea was adding a pin. I honestly don't remember who said it first, 
+// I really liked the idea, so I chose to implement it. A major concern when writing
+// journal entries is vulnerability and privacy. Adding a pin to restrict access to
+// your saved journal entries may provide the user with enough security to feel
+// comfortable writing.
 
 class Program
 {
@@ -43,7 +55,7 @@ class Program
                 break;
             }
 
-            else
+            else // Catch bad inputs
             {
                 Console.WriteLine(" ");
                 Console.WriteLine("Input not recognized. Try again.");
