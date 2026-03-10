@@ -7,49 +7,49 @@ public class Fraction
     private int _bottom;
 
     // Define class constructors
-    Fraction()
+    public Fraction()
     {
         
     }
 
-    Fraction(int wholeNumber)
+    public Fraction(int wholeNumber)
     {
         
     }
 
-    Fraction(int top, int bottom)
+    public Fraction(int top, int bottom)
     {
         
     }
 
     // Define class getters and setters
-    GetTop()
+    public int GetTop()
     {
 
     }
 
-    SetTop(int top)
+    public void SetTop(int top)
     {
 
     }
 
-    GetBottom()
+    public int GetBottom()
     {
 
     }
 
-    SetBottom(int bottom)
+    public void SetBottom(int bottom)
     {
         
     }
 
     // Define class methods
-    GetFractionString()
+    public string GetFractionString()
     {
         
     }
-    
-    GetDecimalValue()
+
+    public double GetDecimalValue()
     {
     
     }
