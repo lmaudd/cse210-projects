@@ -9,17 +9,20 @@ public class Fraction
     // Define class constructors
     public Fraction()
     {
-        
+        _top = 1;
+        _bottom = 1;
     }
 
     public Fraction(int wholeNumber)
     {
-        
+        _top = wholeNumber;
+        _bottom = 1;
     }
 
     public Fraction(int top, int bottom)
     {
-        
+        _top = top;
+        _bottom = bottom;
     }
 
     // Define class getters and setters
