@@ -49,11 +49,11 @@ public class Fraction
     // Define class methods
     public string GetFractionString()
     {
-        
+        return $"{_top}/{_bottom}";
     }
 
     public double GetDecimalValue()
     {
-    
+        return _top/_bottom;
     }
 }
