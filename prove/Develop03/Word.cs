@@ -55,8 +55,7 @@ class Word
 
     public void Test()
     {
-        Console.WriteLine($"Word: {_word}   Length: {_word.Length}");
-        Console.WriteLine($"Word: {_hiddenWord}   Length: {_hiddenWord.Length}");
+        Console.WriteLine($"{_word}   {_hiddenWord}");
     }
 
     public string GetWord(bool maskStatus=false) // mask true = _hiddenWord
