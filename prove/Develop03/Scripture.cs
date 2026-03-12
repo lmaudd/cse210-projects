@@ -19,6 +19,7 @@ class Scripture
     }
 
     // Class set-up methods
+    // https://learn.microsoft.com/en-us/dotnet/api/system.string.split?view=net-10.0
     // private List<Word> GenerateWordList(string scripture)
     // {
     
@@ -26,20 +27,20 @@ class Scripture
 
     // private Reference GenerateReferenceList(string reference)
     // {
-
+        
     // }
 
     // Class methods
     public void HideWord()
     // https://stackoverflow.com/questions/17381332/how-to-tell-if-a-list-does-not-contain-an-element
     {
-        int length = 5;//_scripture.Count();
+        int length = _scripture.Count();
         Random random = new Random();
         int newIndex = -1;
 
         while (true)
         {
-            if (_hiddenVerses.Count() == length)//_scripture.Count())
+            if (_hiddenVerses.Count() == _scripture.Count())
             {
                 break;
             }

@@ -15,17 +15,38 @@ class Word
     }
 
     // Class Methods
+    // https://stackoverflow.com/questions/8879774/how-can-i-check-if-a-string-contains-a-character-in-c
     private string HideWord(string word)
     {
-        int wordLength = word.Length+1;
         string hiddenWord = "";
 
-        for (int i = 1; i < wordLength; i++)
+        if (!_word.Contains(',')) // does not contain a comma
         {
-            hiddenWord += "_";
+            int wordLength = word.Length+1;
+            for (int i = 1; i < wordLength; i++)
+            {
+                hiddenWord += "_";
+            }
+        }
+
+        else // does contain a comma
+        {
+            int wordLength = word.Length;
+            for (int i = 1; i < wordLength; i++)
+            {
+                hiddenWord += "_";
+            }
+
+            hiddenWord += ",";
         }
 
         return hiddenWord;
+    }
+
+    public void Test()
+    {
+        Console.WriteLine($"Word: {_word}   Length: {_word.Length}");
+        Console.WriteLine($"Word: {_hiddenWord}   Length: {_hiddenWord.Length}");
     }
 
     public string GetWord(bool maskStatus=false) // mask true = _hiddenWord
