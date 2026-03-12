@@ -20,16 +20,7 @@ class Word
     {
         string hiddenWord = "";
 
-        if (!_word.Contains(',')) // does not contain a comma
-        {
-            int wordLength = word.Length+1;
-            for (int i = 1; i < wordLength; i++)
-            {
-                hiddenWord += "_";
-            }
-        }
-
-        else // does contain a comma
+        if (_word.Contains(',')) // word contains comma
         {
             int wordLength = word.Length;
             for (int i = 1; i < wordLength; i++)
@@ -40,6 +31,25 @@ class Word
             hiddenWord += ",";
         }
 
+         else if (_word.Contains('.')) // word contains period
+        {
+            int wordLength = word.Length;
+            for (int i = 1; i < wordLength; i++)
+            {
+                hiddenWord += "_";
+            }
+
+            hiddenWord += ".";
+        }
+
+        else // Word contains neither comma nor period
+        {
+            int wordLength = word.Length+1;
+            for (int i = 1; i < wordLength; i++)
+            {
+                hiddenWord += "_";
+            }
+        }
         return hiddenWord;
     }
 
