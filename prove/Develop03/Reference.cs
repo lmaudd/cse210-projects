@@ -2,5 +2,10 @@ using System;
 
 class Reference
 {
+    // Class attributes
+    private string _book;
+    private string _chapter;
+    private string _verse;
+    private string _endVerse;
 
 }
