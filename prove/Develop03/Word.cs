@@ -58,7 +58,7 @@ class Word
         Console.WriteLine($"{_word}   {_hiddenWord}");
     }
 
-    public string GetWord(bool maskStatus=false) // mask true = _hiddenWord
+    public string GetWord(bool maskStatus) // mask true = _hiddenWord
     {
         if (maskStatus == false)
         {

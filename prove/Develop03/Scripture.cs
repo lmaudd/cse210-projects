@@ -96,9 +96,20 @@ class Scripture
         string r = _reference.GetReference();
         Console.Write($"{r}  ");
 
+        int i = 0;
         foreach (Word item in _scripture)
         {
-            Console.Write($"{item.GetWord(true)} ");
+            if (_hiddenVerses.Contains(i)) // mask
+            {
+                Console.Write($"{item.GetWord(true)} ");
+            }
+
+            else // don't mask
+            {
+                Console.Write($"{item.GetWord(false)} "); 
+            }
+
+            i++;
         }
     }
 }
