@@ -21,7 +21,7 @@ class Program
         HelperFunctions hf = new HelperFunctions();
 
         // Simulation loop
-        int userInput = -1;  // Value to store the user's response. Preloaded to -1.
+        string userInput = "";  // Value to store the user's response. Preloaded to -1.
         while (true)
         {
             // Menu work
@@ -31,14 +31,14 @@ class Program
             scripture.HideWord();          // Hide a word (intentionally after display)
 
             // Menu Option: Load a scripture if user types '1'
-            if (userInput == 1) // Load Scripture
+            if (userInput == "1") // Load Scripture
             {
                 (text, reference) = hf.Load();               // Load and save new scripture and reference
                 scripture = new Scripture(text, reference);  // Update the scripture class with new info
             }
 
             // Menu Option: Quit application if user types '9'
-            if (userInput == 9)
+            if (userInput == "9")
             {
                 hf.Quit();  // Handles quitting the loop and thanking user
                 break;      // Break the loop

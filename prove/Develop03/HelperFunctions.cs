@@ -63,20 +63,18 @@ class HelperFunctions
         Console.WriteLine(" ");
         Console.WriteLine("---------------------------------------------");
         Console.WriteLine("| User Options Menu (type #)                |");
-        Console.WriteLine("|   (1) Load scripture                      |");
-        Console.WriteLine("|   (2) Hide word                           |");
-        Console.WriteLine("|   (9) Quit application                    |");
+        Console.WriteLine("|   (1) Load Scripture                      |");
+        Console.WriteLine("|   (2) Quit Application                    |");
         Console.WriteLine("---------------------------------------------");
         Console.WriteLine(" ");
     }
 
-    public int UserInquire()
+    public string UserInquire()
     {
         Console.WriteLine(" ");
         Console.WriteLine(" ");
         Console.Write("Type here: ");
         string input = Console.ReadLine();
-        int inputInt = Int32.Parse(input);
-        return inputInt;
+        return input;
     }
 }
