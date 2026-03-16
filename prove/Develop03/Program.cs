@@ -1,6 +1,9 @@
 // learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number
 // https://ironpdf.com/blog/net-help/csharp-wait-for-seconds/
 
+// Going above and beyond: I added a menu interface that allows the user to choose from a handful of scriptures. 
+// The user can also add to the '.txt' file if they want more scriptures. 
+
 using System;
 
 class Program
