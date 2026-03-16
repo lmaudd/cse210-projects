@@ -38,7 +38,7 @@ class Program
             }
 
             // Menu Option: Quit application if user types '9'
-            if (userInput == "9")
+            if (userInput == "2")
             {
                 hf.Quit();  // Handles quitting the loop and thanking user
                 break;      // Break the loop
