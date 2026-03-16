@@ -134,4 +134,13 @@ class Scripture
             return false;
         }
     }
+
+    public void Restart()
+    {
+        // Rest all masks
+        foreach (Word item in _scripture)
+        {
+            item.SetMaskStatus(false);
+        }
+    }
 }

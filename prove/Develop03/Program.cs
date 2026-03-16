@@ -37,8 +37,14 @@ class Program
                 scripture = new Scripture(text, reference);  // Update the scripture class with new info
             }
 
-            // Menu Option: Quit application if user types '9'
+            // Menu Option: Restart progress if user types '2'
             if (userInput == "2")
+            {
+                scripture.Restart(); //Resart progress
+            }
+
+            // Menu Option: Quit application if user types '3'
+            if (userInput == "3")
             {
                 hf.Quit();  // Handles quitting the loop and thanking user
                 break;      // Break the loop
