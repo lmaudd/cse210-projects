@@ -25,11 +25,10 @@ class HelperFunctions
         }
 
         // Prints
+        int i = 1;
         Console.WriteLine("Loading succesful.");
         Console.WriteLine(" ");
         Console.WriteLine("Make selection... (type 1, 2, etc.)");
-
-        int i = 1;
         foreach (string line in reference)
         {
             Console.WriteLine($"   ({i}) {line}");
