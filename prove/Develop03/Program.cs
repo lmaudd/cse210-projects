@@ -13,7 +13,7 @@ class Program
         Scripture scripture = new Scripture(text, reference);
         HelperFunctions hf = new HelperFunctions();
 
-        string userInput = "";
+        int userInput = -1;
 
         while (true)
         {
@@ -21,20 +21,19 @@ class Program
             scripture.DisplayScripture();
             userInput = hf.UserInquire();
 
-            if (userInput == "Load") // Load Scripture
-            {
-                (text, reference) = hf.Load();
-                scripture = new Scripture(text, reference);
-            }
-
-            if (userInput == "Quit") // Load Scripture
+            if (userInput == 9) // Quit application
             {
                 hf.Quit();
-                Console.WriteLine(" ");
                 break;
             }
 
             scripture.HideWord();
+
+            if (userInput == 1) // Load Scripture
+            {
+                (text, reference) = hf.Load();
+                scripture = new Scripture(text, reference);
+            }
         }
     }
 }
