@@ -84,4 +84,29 @@ class Scripture
             Console.Write($"{item.GetWord()} ");
         }
     }
+
+    public bool CompletionCheck()
+    {
+        // Determine whether or not scripture is done
+        int totalCount = _scripture.Count();
+        int hiddenCount = 0;
+
+        foreach (Word item in _scripture)
+        {
+            if (item.GetMaskStatus() == true)
+            {
+                hiddenCount++;
+            }
+        }
+
+        if (hiddenCount == totalCount)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+    }
 }

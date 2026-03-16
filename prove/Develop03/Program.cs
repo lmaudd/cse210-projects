@@ -3,6 +3,8 @@
 
 // Going above and beyond: I added a menu interface that allows the user to choose from a handful of scriptures. 
 // The user can also add to the '.txt' file if they want more scriptures. 
+//
+// Furthermore, my program only hides uhidden words.
 
 using System;
 
@@ -45,6 +47,16 @@ class Program
             // Menu Option Note: The loop continues otherwise. Technically, they can type
             // any number beside 1 or 9 will proceed to hide a word. I wish it could still 
             // be enter, but enter can't be cast to integer.
+
+            // Completion Check
+            if (scripture.CompletionCheck() == true)
+            {
+                hf.Menu();                     // Display custom menu
+                scripture.DisplayScripture();  // Print scripture to console
+                Console.WriteLine(" ");
+                hf.Quit();                     // Handles quitting the loop and thanking user
+                break;                         // Break the loop
+            }
         }
     }
 }
