@@ -62,6 +62,31 @@ class Scripture
         int maxIterations = length + 5; // This many iterations will always be sufficient
         int newIndex = -1;
 
+        // Hide first of three words
+        for (int i = 0; i < maxIterations; i++) 
+        {        
+            newIndex = random.Next(length);
+
+            if (_scripture[newIndex].GetMaskStatus() ==  false)
+            {
+                _scripture[newIndex].SetMaskStatus(true);
+                break;
+            }
+        }
+
+        // Hide second of three words
+        for (int i = 0; i < maxIterations; i++) 
+        {        
+            newIndex = random.Next(length);
+
+            if (_scripture[newIndex].GetMaskStatus() ==  false)
+            {
+                _scripture[newIndex].SetMaskStatus(true);
+                break;
+            }
+        }
+
+        // Hide third of three words
         for (int i = 0; i < maxIterations; i++) 
         {        
             newIndex = random.Next(length);
