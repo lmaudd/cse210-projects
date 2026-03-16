@@ -1,23 +1,22 @@
+// https://learn.microsoft.com/en-us/dotnet/api/system.string.split?view=net-10.0
+// https://stackoverflow.com/questions/17381332/how-to-tell-if-a-list-does-not-contain-an-element
+
 using System;
 
 class Scripture
 {
-    // Class attributes
+    // Class attributes ///////////////////////////////////////////////////////////////////////
     private Reference _reference;
     private List<Word> _scripture;
-    private List<int> _hiddenVerses;
 
-    // Class constructor
+    // Class constructor ///////////////////////////////////////////////////////////////////////
     public Scripture(string scripture, string reference)
     {
         _reference = GenerateReferenceList(reference);
         _scripture = GenerateWordList(scripture);
-        _hiddenVerses = new List<int>();
-
     }
 
-    // Class set-up methods
-    // https://learn.microsoft.com/en-us/dotnet/api/system.string.split?view=net-10.0
+    // Class set-up methods ////////////////////////////////////////////////////////////////////
     private List<Word> GenerateWordList(string scripture)
     {
         List<Word> scriptureWordList = new List<Word>();
@@ -55,36 +54,23 @@ class Scripture
         return referenceWorking;
     }
 
-    // Class methods
+    // Class methods ///////////////////////////////////////////////////////////////////////////
     public void HideWord()
-    // https://stackoverflow.com/questions/17381332/how-to-tell-if-a-list-does-not-contain-an-element
     {
-        int length = _scripture.Count();
         Random random = new Random();
+        int length = _scripture.Count();
+        int maxIterations = length + 5; // This many iterations will always be sufficient
         int newIndex = -1;
 
-        while (true)
-        {
-            if (_hiddenVerses.Count() == _scripture.Count())
-            {
-                break;
-            }
-            
+        for (int i = 0; i < maxIterations; i++) 
+        {        
             newIndex = random.Next(length);
 
-            if (!_hiddenVerses.Contains(newIndex))
+            if (_scripture[newIndex].GetMaskStatus() ==  false)
             {
-                _hiddenVerses.Add(newIndex);
+                _scripture[newIndex].SetMaskStatus(true);
                 break;
             }
-        }
-    }
-
-    public void Print()
-    {
-        foreach (int number in _hiddenVerses)
-        {
-            Console.WriteLine(number);
         }
     }
 
@@ -93,20 +79,9 @@ class Scripture
         string r = _reference.GetReference();
         Console.Write($"{r}  ");
 
-        int i = 0;
         foreach (Word item in _scripture)
         {
-            if (_hiddenVerses.Contains(i)) // mask
-            {
-                Console.Write($"{item.GetWord(true)} ");
-            }
-
-            else // don't mask
-            {
-                Console.Write($"{item.GetWord(false)} "); 
-            }
-
-            i++;
+            Console.Write($"{item.GetWord()} ");
         }
     }
 }

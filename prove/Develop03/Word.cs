@@ -1,20 +1,23 @@
+// https://stackoverflow.com/questions/8879774/how-can-i-check-if-a-string-contains-a-character-in-c
+
 using System;
 
 class Word
 {
-    // Class attributes
+    // Class attributes ///////////////////////////////////////////////
     private string _word;
     private string _hiddenWord;
+    private bool _maskStatus;
 
-    // Constuctor
+    // Constuctor /////////////////////////////////////////////////////
     public Word(string word)
     {
         _word = word;
         _hiddenWord = HideWord(word);
+        _maskStatus = false;
     }
 
-    // Class Methods
-    // https://stackoverflow.com/questions/8879774/how-can-i-check-if-a-string-contains-a-character-in-c
+    // Class Methods ///////////////////////////////////////////////////
     private string HideWord(string word)
     {
         string hiddenWord = "";
@@ -52,14 +55,19 @@ class Word
         return hiddenWord;
     }
 
-    public void Test()
+    public bool GetMaskStatus()
     {
-        Console.WriteLine($"{_word}   {_hiddenWord}");
+        return _maskStatus;
     }
 
-    public string GetWord(bool maskStatus) // mask true = _hiddenWord
+    public void SetMaskStatus(bool newStatus)
     {
-        if (maskStatus == false)
+        _maskStatus = newStatus;
+    }
+
+    public string GetWord()
+    {
+        if (_maskStatus == false)
         {
             return _word;
         }

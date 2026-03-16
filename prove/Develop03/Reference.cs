@@ -2,13 +2,13 @@ using System;
 
 class Reference
 {
-    // Class attributes
+    // Class attributes /////////////////////////////////////////////////////////
     private string _book;
     private string _chapter;
     private string _verse;
     private string _endVerse;
 
-     // Class constructors
+     // Class constructors //////////////////////////////////////////////////////
      public Reference(string book, string chapter, string verse)
      {
         _book = book;
@@ -25,7 +25,7 @@ class Reference
         _endVerse = endVerse;
     }
 
-    // Class methods
+    // Class methods ////////////////////////////////////////////////////////////
     public string GetReference()
     {
         string reference = "";
