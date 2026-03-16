@@ -1,3 +1,6 @@
+// learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number
+// https://ironpdf.com/blog/net-help/csharp-wait-for-seconds/
+
 using System;
 
 class Program
@@ -8,21 +11,30 @@ class Program
         string reference = "Isaiah 45:1";
 
         Scripture scripture = new Scripture(text, reference);
+        HelperFunctions hf = new HelperFunctions();
 
-        string cont = "";
+        string userInput = "";
 
-        while (cont != "quit")
+        while (true)
         {
-            Console.Clear();
-            Console.WriteLine(" ");
+            hf.Menu();
             scripture.DisplayScripture();
+            userInput = hf.UserInquire();
 
-            Console.WriteLine(" ");
-            Console.WriteLine(" ");
-            Console.Write("Type 'quit' to quit: ");
-            cont = Console.ReadLine();
+            if (userInput == "Load") // Load Scripture
+            {
+                (text, reference) = hf.Load();
+                scripture = new Scripture(text, reference);
+            }
+
+            if (userInput == "Quit") // Load Scripture
+            {
+                hf.Quit();
+                Console.WriteLine(" ");
+                break;
+            }
+
             scripture.HideWord();
-            Console.WriteLine(" ");
         }
     }
 }
