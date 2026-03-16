@@ -61,12 +61,12 @@ class HelperFunctions
     {
         Console.Clear();
         Console.WriteLine(" ");
-        Console.WriteLine("---------------------------------------------");
-        Console.WriteLine("| User Options Menu (type #)                |");
-        Console.WriteLine("|   (1) Load Scripture                      |");
-        Console.WriteLine("|   (2) Restart Progress                    |");
-        Console.WriteLine("|   (3) Quit Application                    |");
-        Console.WriteLine("---------------------------------------------");
+        Console.WriteLine("-------------------------------------------------");
+        Console.WriteLine("| User Options Menu (type #, or ENTR to hide)   |");
+        Console.WriteLine("|   (1) Load Scripture                          |");
+        Console.WriteLine("|   (2) Restart Progress                        |");
+        Console.WriteLine("|   (3) Quit Application                        |");
+        Console.WriteLine("-------------------------------------------------");
         Console.WriteLine(" ");
     }
 
