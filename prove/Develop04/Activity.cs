@@ -1,3 +1,5 @@
+// https://numerics.net/documentation/latest/reference/numerics.net.curves.surfaces.gridboundarycondition.periodic
+
 using System;
 
 class Activity
@@ -25,17 +27,12 @@ class Activity
 
     public void PauseAnimation(int timeSeconds) 
     {
-        List<char> temp = new List<char> {'|', '/', '-', '\\', '|', '/', '-', '\\', 
-                                          '|', '/', '-', '\\', '|', '/', '-', '\\',
-                                          '|', '/', '-', '\\', '|', '/', '-', '\\',
-                                          '|', '/', '-', '\\', '|', '/', '-', '\\',
-                                          '|', '/', '-', '\\', '|', '/', '-', '\\',
-                                          '|', '/', '-', '\\', '|', '/', '-', '\\',
-                                          '|', '/', '-', '\\', '|', '/', '-', '\\', '|'};
+        List<char> temp = new List<char> {'|', '/', '-', '\\'};
 
         for (int i = timeSeconds; i > 0; i--)
         {
-            Console.Write(temp[i]);
+            int index = ((i % 4) + 4) % 4; // periodic boundary conditions (I took PH 385)
+            Console.Write(temp[index]);
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
