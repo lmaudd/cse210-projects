@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Activity activity = new Activity("test");
-
-        activity.PauseAnimation(70);
+        ReflectionActivity activity = new ReflectionActivity("test");
+        // activity.InitiateActivity();
+        activity.PressEnter();
     }   
 }

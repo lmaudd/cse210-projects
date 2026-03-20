@@ -63,11 +63,9 @@ class ReflectionActivity : Activity
         int durationSeconds = GetDuration();
 
         StartingMessage();
-
         Console.WriteLine($"\n{_reflectingDecription}");
-
         InquireTime();
-
+        PressEnter();
         Console.WriteLine($"\n{prompt}");
         Console.WriteLine($"\n{question}");
 

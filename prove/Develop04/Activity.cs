@@ -31,7 +31,7 @@ class Activity
 
         for (int i = timeSeconds; i > 0; i--)
         {
-            int index = ((i % 4) + 4) % 4; // periodic boundary conditions (I took PH 385)
+            int index = ((i % 4) + 4) % 4; // periodic boundary conditions that I learned in Physics 385, numerical modelling physics
             Console.Write(temp[index]);
             Thread.Sleep(1000);
             Console.Write("\b \b");
@@ -44,6 +44,13 @@ class Activity
         string userInput = Console.ReadLine();
         int durationSeconds = Int32.Parse(userInput);
         _duration = durationSeconds;
+    }
+
+    public void PressEnter()
+    {
+        Console.Write("\n Press enter continue: ");
+        Console.ReadLine();
+        Console.WriteLine();
     }
 
     public int GetDuration() 
