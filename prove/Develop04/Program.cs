@@ -4,36 +4,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Console.Write("|");
-        // Thread.Sleep(1000);
+        Console.WriteLine(" ");
+        List<char> temp = new List<char> {'|', '/', '-', '\\',
+                                          '|', '/', '-', '\\', 
+                                          '|', '/', '-', '\\',
+                                          '|', '/', '-', '\\',
+                                          '|'};
 
-        // Console.Write("\b \b");
-        // Console.Write("/");
-        // Thread.Sleep(1000);
+        foreach (char i in temp)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
 
-        // Console.Write("\b \b");
-        // Console.Write("--");
-        // Thread.Sleep(1000);
+        Console.WriteLine(" ");
 
-        // Console.Write("\b \b");
-        // Console.Write("/");
-        // Thread.Sleep(1000);
-
-        // Console.Write("\b \b");
-        // Console.Write("|");
-        // Thread.Sleep(1000);
-
-        // Console.Write("\b \b");
-        // Console.Write("/");
-        // Thread.Sleep(1000);
-
-        // Activity activity = new Activity("Test");
-        // activity.StartingMessage();
-        // activity.EndingMessage();
-        // activity.InquireTime();
-
-        ReflectionActivity refAct = new ReflectionActivity("Reflecting Activity");
-        refAct.InitiateActivity();
-
+        // |/-\|/-\|
     }   
 }

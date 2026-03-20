@@ -23,9 +23,22 @@ class Activity
         Console.WriteLine($"\nYou have completed another {_duration} seconds of {_activityName}.\n");
     }
 
-    public void PauseTime(double time) 
+    public void PauseAnimation(int timeSeconds) 
     {
+        List<char> temp = new List<char> {'|', '/', '-', '\\', '|', '/', '-', '\\', 
+                                          '|', '/', '-', '\\', '|', '/', '-', '\\',
+                                          '|', '/', '-', '\\', '|', '/', '-', '\\',
+                                          '|', '/', '-', '\\', '|', '/', '-', '\\',
+                                          '|', '/', '-', '\\', '|', '/', '-', '\\',
+                                          '|', '/', '-', '\\', '|', '/', '-', '\\',
+                                          '|', '/', '-', '\\', '|', '/', '-', '\\', '|'};
 
+        for (int i = timeSeconds; i > 0; i--)
+        {
+            Console.Write(temp[i]);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
     }
 
     public void InquireTime() 
