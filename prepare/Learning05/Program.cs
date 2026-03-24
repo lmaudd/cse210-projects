@@ -5,9 +5,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Circle crc = new Circle("Pink", 1.59576912161);
-        string color = crc.GetColor();
-        double area = crc.GetArea();
-        Console.WriteLine($"\nTesting Square Class:\n- color = {color}\n- area = {area}\n");
+        Rectangle rc = new Rectangle("Black", 2, 4);
+        string color = rc.GetColor();
+        double area = rc.GetArea();
+        Console.WriteLine($"\nTesting Rectangle Class:\n- color = {color}\n- area = {area}\n");
     }
 }
