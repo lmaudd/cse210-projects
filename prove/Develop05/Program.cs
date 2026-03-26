@@ -17,20 +17,38 @@ class Program
         // Console.WriteLine(tp2);
 
         // Test EternalGoal
-        string goal = "Drink more water.";
-        int points = 50;
-        EternalGoal eg = new EternalGoal(goal, points);
+        // string goal = "Drink more water.";
+        // int points = 50;
+        // EternalGoal eg = new EternalGoal(goal, points);
 
-        int tp1 = eg.GetTotalPoints();
-        eg.RecordEvent();
-        int tp2 = eg.GetTotalPoints();
-        eg.RecordEvent();
-        eg.RecordEvent();
-        eg.RecordEvent();
-        int tp3 = eg.GetTotalPoints();
+        // int tp1 = eg.GetTotalPoints();
+        // eg.RecordEvent();
+        // int tp2 = eg.GetTotalPoints();
+        // eg.RecordEvent();
+        // eg.RecordEvent();
+        // eg.RecordEvent();
+        // int tp3 = eg.GetTotalPoints();
 
-        Console.WriteLine(tp1);
-        Console.WriteLine(tp2);
-        Console.WriteLine(tp3);
+        // Console.WriteLine(tp1);
+        // Console.WriteLine(tp2);
+        // Console.WriteLine(tp3);
+
+        // Test ChecklistGoal
+        int bonusPoints = 200;
+        int goalCompleted = 3;
+        string goal = "Drink water.";
+        int pointValue = 20;
+
+        ChecklistGoal cg = new ChecklistGoal(bonusPoints, goalCompleted, goal, pointValue);
+
+        Console.WriteLine(cg.GetTotalPoints());
+        cg.RecordEvent();
+        Console.WriteLine(cg.GetTotalPoints());
+        cg.RecordEvent();
+        Console.WriteLine(cg.GetTotalPoints());
+        cg.RecordEvent();
+        Console.WriteLine(cg.GetTotalPoints());
+        cg.RecordEvent();
+        Console.WriteLine(cg.GetTotalPoints());
     }
 }
