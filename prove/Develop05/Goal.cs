@@ -3,30 +3,41 @@ using System;
 public abstract class Goal
 {
     // Member variables
-    private string _goal;
-    private int _pointValue;
+    private int _completionPoints;
     private bool _goalStatus;
+    private string _goal;
 
     // Constructor
-    public Goal(string goal, int pointValue)
+    public Goal(string goal, int completionPoints)
     {
-        _goal = goal;
-        _pointValue = pointValue;
+        _completionPoints = completionPoints;
         _goalStatus = false;
+        _goal = goal;   
     }
 
-    // Getters & Setters
+    // Get & Set Status
+    public bool GetStatus()
+    {
+        return _goalStatus;
+    }
+        
     public void SetStatus(bool newStatus)
     {
         _goalStatus = newStatus;
     }
 
-    public void SetPoints(int newPoints)
+    // Get & Set Completion Points
+    public int GetCompletionPoints()
     {
-        _pointValue = newPoints;
+        return _completionPoints;
     }
 
-    // Other Methods
+    public void SetCompletionPoints(int newPoints)
+    {
+        _completionPoints = newPoints;
+    }
+
+    // Other Methods (Abstract)
     public abstract void RecordEvent();
 
     public abstract int GetTotalPoints();

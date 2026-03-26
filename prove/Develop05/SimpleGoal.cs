@@ -2,9 +2,10 @@ using System;
 
 public class SimpleGoal : Goal
 {
+    // Constructor
     public SimpleGoal(string goal, int pointValue) : base(goal, pointValue){}
 
-
+    // Methods
     public override void RecordEvent()
     {
         SetStatus(true);
@@ -12,7 +13,14 @@ public class SimpleGoal : Goal
 
     public override int GetTotalPoints()
     {
-        // Code here ...
-        return 1;
+        bool status = GetStatus();
+        int completionPoints = 0;
+
+        if (status == true)
+        {
+            completionPoints = GetCompletionPoints();
+        }
+
+        return completionPoints;
     }
 }
