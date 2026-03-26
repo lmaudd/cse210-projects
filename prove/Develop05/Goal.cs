@@ -6,10 +6,10 @@ public abstract class Goal
     private int _pointValue;
     private bool _goalStatus;
 
-    public Goal(string goal)
+    public Goal(string goal, int pointValue)
     {
         _goal = goal;
-        _pointValue = -1;
+        _pointValue = pointValue;
         _goalStatus = false;
     }
 
@@ -23,5 +23,5 @@ public abstract class Goal
         _pointValue = newPoints;
     }
 
-    public abstract int RecordEvent();
+    public abstract void RecordEvent();
 }

@@ -6,16 +6,15 @@ public class ChecklistGoal : Goal
     private int _timesCompleted;
     private int _goalCompleted;
 
-    public ChecklistGoal(int bonusPoints, int timesCompleted, int goalCompleted, string goal) : base(goal)
+    public ChecklistGoal(int bonusPoints, int goalCompleted, string goal, int pointValue) : base(goal, pointValue)
     {
         _bonusPoints = bonusPoints;
-        _timesCompleted = timesCompleted;
+        _timesCompleted = 0;
         _goalCompleted = goalCompleted;
     }
 
-    public override int RecordEvent()
+    public override void RecordEvent()
     {
         // Code here...
-        return 1;
     }
 }

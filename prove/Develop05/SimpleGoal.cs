@@ -2,11 +2,10 @@ using System;
 
 public class SimpleGoal : Goal
 {
-    public SimpleGoal(string goal) : base(goal){}
+    public SimpleGoal(string goal, int pointValue) : base(goal, pointValue){}
 
-    public override int RecordEvent()
+    public override void RecordEvent()
     {
-        // Code here...
-        return 1;
+        SetStatus(true);
     }
 }

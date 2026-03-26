@@ -2,11 +2,15 @@ using System;
 
 public class EternalGoal : Goal
 {
-    public EternalGoal(string goal) : base(goal){}
+    private int _timesCompleted;
 
-    public override int RecordEvent()
+    public EternalGoal(string goal, int pointValue) : base(goal, pointValue)
     {
-        // Code here...
-        return 1;
+        _timesCompleted = 0;
+    }
+
+    public override void RecordEvent()
+    {
+        _timesCompleted++;
     }
 }
