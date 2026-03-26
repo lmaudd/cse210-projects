@@ -4,51 +4,81 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Test SimpleGoal
-        // string goal = "Drink more water.";
-        // int points = 50;
-        // SimpleGoal sg = new SimpleGoal(goal, points);
+        string mainOption = "";
+        string goalOption = "";
 
-        // int tp1 = sg.GetTotalPoints();
-        // sg.RecordEvent();
-        // int tp2 = sg.GetTotalPoints();
+        while (mainOption != "6")
+        {
+            mainOption = MainMenuInquiry();
 
-        // Console.WriteLine(tp1);
-        // Console.WriteLine(tp2);
+            if (mainOption == "1") // User has selected "Create New Goal"
+            {
+                goalOption = GoalMenuInquiry();
 
-        // Test EternalGoal
-        // string goal = "Drink more water.";
-        // int points = 50;
-        // EternalGoal eg = new EternalGoal(goal, points);
+                if (goalOption == "1") // User has selected "Simple Goal"
+                {
+                    // Code to create simple goal...
+                }
 
-        // int tp1 = eg.GetTotalPoints();
-        // eg.RecordEvent();
-        // int tp2 = eg.GetTotalPoints();
-        // eg.RecordEvent();
-        // eg.RecordEvent();
-        // eg.RecordEvent();
-        // int tp3 = eg.GetTotalPoints();
+                if (goalOption == "3") // User has selected "Eternal Goal"
+                {
+                    // Code to create eternal goal...
+                }
 
-        // Console.WriteLine(tp1);
-        // Console.WriteLine(tp2);
-        // Console.WriteLine(tp3);
+                if (goalOption == "3") // User has selected "Checklist Goal"
+                {
+                    // Code to create checklist goal...
+                }
+            }
 
-        // Test ChecklistGoal
-        int bonusPoints = 200;
-        int goalCompleted = 3;
-        string goal = "Drink water.";
-        int pointValue = 20;
+            if (mainOption == "2") // User has selected "List Goals"
+            {
+                // Code to list goals...
+            }
 
-        ChecklistGoal cg = new ChecklistGoal(bonusPoints, goalCompleted, goal, pointValue);
+            if (mainOption == "3") // User has selected "Save Goals"
+            {
+                // Code to save goals
+            }
 
-        Console.WriteLine(cg.GetTotalPoints());
-        cg.RecordEvent();
-        Console.WriteLine(cg.GetTotalPoints());
-        cg.RecordEvent();
-        Console.WriteLine(cg.GetTotalPoints());
-        cg.RecordEvent();
-        Console.WriteLine(cg.GetTotalPoints());
-        cg.RecordEvent();
-        Console.WriteLine(cg.GetTotalPoints());
+            if (mainOption == "4") // User has selected "Load Goals"
+            {
+                // Code to load goals...
+            }
+
+            if (mainOption == "5") // User has selected "Record Event"
+            {
+                // Code to record an event...
+            }
+
+            if (mainOption == "6") // User has selected "Quit"
+            {
+                Console.WriteLine("Thank you for using.");
+                break;
+            }             
+        }
+    }
+
+    static string MainMenuInquiry()
+    {
+        Console.WriteLine("Menu Options:");
+        Console.WriteLine("  1. Create New Goal ");
+        Console.WriteLine("  2. List Goals      ");
+        Console.WriteLine("  3. Save Goals      ");
+        Console.WriteLine("  4. Load Goals      ");
+        Console.WriteLine("  5. Record Event    ");  
+        Console.WriteLine("  6. Quit            ");    
+        Console.Write("Select a choice from the menu: ");   
+        return Console.ReadLine();
+    }
+
+    static string GoalMenuInquiry()
+    {
+        Console.WriteLine("The types of goals are...");
+        Console.WriteLine("  1. Simple Goal    ");
+        Console.WriteLine("  2. Eternal Goal   ");
+        Console.WriteLine("  3. Checklist Goal ");  
+        Console.Write("Select a choice from the menu: ");   
+        return Console.ReadLine();
     }
 }
