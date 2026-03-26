@@ -13,4 +13,9 @@ public class EternalGoal : Goal
     {
         _timesCompleted++;
     }
+    public override int GetTotalPoints()
+    {
+        // Code here ...
+        return 1;
+    }
 }

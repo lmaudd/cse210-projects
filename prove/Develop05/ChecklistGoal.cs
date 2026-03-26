@@ -17,4 +17,10 @@ public class ChecklistGoal : Goal
     {
         // Code here...
     }
+
+    public override int GetTotalPoints()
+    {
+        // Code here ...
+        return 1;
+    }
 }

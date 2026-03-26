@@ -2,10 +2,12 @@ using System;
 
 public abstract class Goal
 {
+    // Member variables
     private string _goal;
     private int _pointValue;
     private bool _goalStatus;
 
+    // Constructor
     public Goal(string goal, int pointValue)
     {
         _goal = goal;
@@ -13,6 +15,7 @@ public abstract class Goal
         _goalStatus = false;
     }
 
+    // Getters & Setters
     public void SetStatus(bool newStatus)
     {
         _goalStatus = newStatus;
@@ -23,5 +26,8 @@ public abstract class Goal
         _pointValue = newPoints;
     }
 
+    // Other Methods
     public abstract void RecordEvent();
+
+    public abstract int GetTotalPoints();
 }
