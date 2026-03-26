@@ -2,25 +2,51 @@ using System;
 
 public class ChecklistGoal : Goal
 {
-    private int _bonusPoints;
+    // Member Variables
     private int _timesCompleted;
     private int _goalCompleted;
+    private int _bonusPoints;
 
+    // Constructor
     public ChecklistGoal(int bonusPoints, int goalCompleted, string goal, int pointValue) : base(goal, pointValue)
     {
-        _bonusPoints = bonusPoints;
-        _timesCompleted = 0;
         _goalCompleted = goalCompleted;
+        _bonusPoints = bonusPoints;
+        _timesCompleted = 0;    
     }
 
+    // Methods
     public override void RecordEvent()
     {
-        // Code here...
+        // If they haven't completed, iterate
+        if (_timesCompleted < _goalCompleted)
+        {
+            _timesCompleted++;
+        }
+
+        // If they've done enough events, set true
+        if (_timesCompleted == _goalCompleted)
+        {
+            SetStatus(true);
+        }
     }
 
     public override int GetTotalPoints()
     {
-        // Code here ...
-        return 1;
+        // Define variables
+        int completionPoints = GetCompletionPoints();
+        bool status = GetStatus();
+        int points = 0;
+
+        // Add points for each completion event
+        points += completionPoints * _timesCompleted;
+
+        // Add bonus points if completed enough times
+        if (status == true)
+        {
+            points += _bonusPoints;
+        }
+
+        return points;
     }
 }
