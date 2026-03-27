@@ -3,10 +3,17 @@ using System;
 class Assigment
 {
     // Class attributes
-    private string _studentName;
+    protected string _studentName;
     private string _topic;
+    
+    // Class Constructor
+    public Assigment(string studentName, string topic)
+    {
+        _studentName = studentName;
+        _topic = topic;
+    }
 
-     // Class constructors 
+     // Class Methods
     public string GetSummary()
     {
         return $"{_studentName} - {_topic}";
