@@ -3,10 +3,10 @@ using System;
 public abstract class Goal
 {
     // Member variables
-    private int _completionPoints;
-    private bool _isComplete;
-    private string _goalDescription;
-    private string _goal;
+    protected int _completionPoints;
+    protected bool _isComplete;
+    protected string _goalDescription;
+    protected string _goal;
 
     // Constructor
     public Goal(string goal, string goalDescription, int completionPoints)
@@ -43,4 +43,6 @@ public abstract class Goal
     public abstract void RecordEvent();
 
     public abstract int GetTotalPoints();
+
+    public abstract void DisplayGoal(int n);
 }

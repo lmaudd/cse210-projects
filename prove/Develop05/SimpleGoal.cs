@@ -1,4 +1,6 @@
 using System;
+using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 
 public class SimpleGoal : Goal
 {
@@ -22,5 +24,18 @@ public class SimpleGoal : Goal
         }
 
         return completionPoints;
+    }
+
+    public override void DisplayGoal(int n)
+    {   
+        string checkMark = " ";
+
+        if (_isComplete == true)
+        {
+            checkMark = "X";
+        }
+
+        string line = $"  {n}. [{checkMark}] {_goal} ({_goalDescription})";
+        Console.WriteLine(line);
     }
 }

@@ -49,4 +49,17 @@ public class ChecklistGoal : Goal
 
         return points;
     }
+
+    public override void DisplayGoal(int n)
+    {   
+        string checkMark = " ";
+
+        if (_isComplete == true)
+        {
+            checkMark = "X";
+        }
+
+        string line = $"  {n}. [{checkMark}] {_goal} ({_goalDescription})";
+        Console.WriteLine(line);
+    }
 }

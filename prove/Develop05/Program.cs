@@ -1,12 +1,18 @@
 using System;
+using System.Runtime.CompilerServices;
 
 class Program
 {
     static void Main(string[] args)
     {
+        // Initialize Eternal Quest Variables
+        List<Goal> goals = new List<Goal>();
+
+        // Define User Input Variables
         string mainOption = "";
         string goalOption = "";
 
+        // Program Running Loop
         while (mainOption != "6")
         {
             mainOption = MainMenuInquiry();
@@ -19,27 +25,76 @@ class Program
                     switch (goalOption)
                     {
                         case "1": // User has selected "Simple Goal"
-                            // Code to create simple goal...
+                            // Obtain Goal
+                            Console.Write("What is the name of your goal? ");
+                            string sGoal = Console.ReadLine();
+
+                            // Obtain Goal Description
+                            Console.Write("Describe your goal... ");
+                            string sGoalDescription = Console.ReadLine();
+
+                            // Obtain Goal Point Value (for completion)
+                            Console.Write("How many points is completing this goal worth? ");
+                            string sPointValueString = Console.ReadLine();
+                            int sPointValue = Int32.Parse(sPointValueString);
+
+                            // Instantiate Goal, Save to List, & Break
+                            SimpleGoal sg = new SimpleGoal(sGoal, sGoalDescription, sPointValue);
+                            goals.Add(sg);
                             break;
 
                         case "2": // User has selected "Eternal Goal"
-                            // Code to create eternal goal...
+                            // Obtain Goal
+                            Console.Write("What is the name of your goal? ");
+                            string eGoal = Console.ReadLine();
+
+                            // Obtain Goal Description
+                            Console.Write("Describe your goal... ");
+                            string eGoalDescription = Console.ReadLine();
+
+                            // Obtain Goal Point Value (for completion)
+                            Console.Write("How many points is completing this goal worth? ");
+                            string ePointValueString = Console.ReadLine();
+                            int ePointValue = Int32.Parse(ePointValueString);
+
+                            // Instantiate Goal, Save to List, & Break
+                            EternalGoal eg = new EternalGoal(eGoal, eGoalDescription, ePointValue);
+                            goals.Add(eg);
                             break;
 
                         case "3": // User has selected "Checklist Goal"
-                            // Code to create checklist goal...
+                            // Obtain Goal
+                            Console.Write("What is the name of your goal? ");
+                            string cGoal = Console.ReadLine();
+
+                            // Obtain Goal Description
+                            Console.Write("Describe your goal... ");
+                            string cGoalDescription = Console.ReadLine();
+
+                            // Obtain Goal Point Value (for completion)
+                            Console.Write("How many points is completing this goal worth? ");
+                            string cPointValueString = Console.ReadLine();
+                            int cPointValue = Int32.Parse(cPointValueString);
+
+                            // Instantiate Goal, Save to List, & Break
+                            EternalGoal cg = new EternalGoal(cGoal, cGoalDescription, cPointValue);
+                            goals.Add(cg);
                             break;
 
                         default: // User has given invalid input
                             Console.WriteLine("~~ Invalid User Input ~~");
                             break;
-
                     }
 
                     break;
 
                 case "2": // User has selected "List Goals"
-                    // Code to list goals...
+                    int n = 1;
+                    foreach (Goal g in goals)
+                    {
+                        g.DisplayGoal(n);
+                        n++;
+                    }
                     break;
 
                 case "3": // User has selected "Save Goals"
@@ -67,6 +122,7 @@ class Program
 
     static string MainMenuInquiry()
     {
+        Console.Clear();
         Console.WriteLine("Menu Options:");
         Console.WriteLine("  1. Create New Goal ");
         Console.WriteLine("  2. List Goals      ");
@@ -80,6 +136,7 @@ class Program
 
     static string GoalMenuInquiry()
     {
+        Console.WriteLine("");
         Console.WriteLine("The types of goals are...");
         Console.WriteLine("  1. Simple Goal    ");
         Console.WriteLine("  2. Eternal Goal   ");
