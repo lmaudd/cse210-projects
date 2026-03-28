@@ -26,15 +26,15 @@ class Program
                     {
                         case "1": // User has selected "Simple Goal"
                             // Obtain Goal
-                            Console.Write("What is the name of your goal? ");
+                            Console.Write("  - What is the name of your goal? ");
                             string sGoal = Console.ReadLine();
 
                             // Obtain Goal Description
-                            Console.Write("Describe your goal... ");
+                            Console.Write("  - Describe your goal... ");
                             string sGoalDescription = Console.ReadLine();
 
                             // Obtain Goal Point Value (for completion)
-                            Console.Write("How many points is completing this goal worth? ");
+                            Console.Write("  - How many points is completing this goal worth? ");
                             string sPointValueString = Console.ReadLine();
                             int sPointValue = Int32.Parse(sPointValueString);
 
@@ -45,15 +45,15 @@ class Program
 
                         case "2": // User has selected "Eternal Goal"
                             // Obtain Goal
-                            Console.Write("What is the name of your goal? ");
+                            Console.Write("  - What is the name of your goal? ");
                             string eGoal = Console.ReadLine();
 
                             // Obtain Goal Description
-                            Console.Write("Describe your goal... ");
+                            Console.Write("  - Describe your goal... ");
                             string eGoalDescription = Console.ReadLine();
 
                             // Obtain Goal Point Value (for completion)
-                            Console.Write("How many points is completing this goal worth? ");
+                            Console.Write("  - How many points is completing this goal worth? ");
                             string ePointValueString = Console.ReadLine();
                             int ePointValue = Int32.Parse(ePointValueString);
 
@@ -64,15 +64,15 @@ class Program
 
                         case "3": // User has selected "Checklist Goal"
                             // Obtain Goal
-                            Console.Write("What is the name of your goal? ");
+                            Console.Write("  - What is the name of your goal? ");
                             string cGoal = Console.ReadLine();
 
                             // Obtain Goal Description
-                            Console.Write("Describe your goal... ");
+                            Console.Write("  - Describe your goal... ");
                             string cGoalDescription = Console.ReadLine();
 
                             // Obtain Goal Point Value (for completion)
-                            Console.Write("How many points is completing this goal worth? ");
+                            Console.Write("  - How many points is completing this goal worth? ");
                             string cPointValueString = Console.ReadLine();
                             int cPointValue = Int32.Parse(cPointValueString);
 
@@ -110,7 +110,7 @@ class Program
                     break;
 
                 case "6": // User has selected "Quit"
-                    Console.WriteLine("Thank you for using.");
+                    Console.WriteLine("Thank you for using.\n");
                     break;
                 
                 default: // User has given invalid input
@@ -136,8 +136,7 @@ class Program
 
     static string GoalMenuInquiry()
     {
-        Console.WriteLine("");
-        Console.WriteLine("The types of goals are...");
+        Console.WriteLine("\nThe types of goals are...");
         Console.WriteLine("  1. Simple Goal    ");
         Console.WriteLine("  2. Eternal Goal   ");
         Console.WriteLine("  3. Checklist Goal ");  
