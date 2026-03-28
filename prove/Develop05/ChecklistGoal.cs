@@ -8,7 +8,7 @@ public class ChecklistGoal : Goal
     private int _bonusPoints;
 
     // Constructor
-    public ChecklistGoal(int bonusPoints, int goalCompleted, string goal, int pointValue) : base(goal, pointValue)
+    public ChecklistGoal(int bonusPoints, int goalCompleted, string goal, string goalDescription, int pointValue) : base(goal, goalDescription, pointValue)
     {
         _goalCompleted = goalCompleted;
         _bonusPoints = bonusPoints;

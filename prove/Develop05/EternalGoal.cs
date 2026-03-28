@@ -6,7 +6,7 @@ public class EternalGoal : Goal
     private int _timesCompleted;
 
     // Constructor 
-    public EternalGoal(string goal, int pointValue) : base(goal, pointValue)
+    public EternalGoal(string goal, string goalDescription, int pointValue) : base(goal, goalDescription, pointValue)
     {
         _timesCompleted = 0;
     }

@@ -3,7 +3,7 @@ using System;
 public class SimpleGoal : Goal
 {
     // Constructor
-    public SimpleGoal(string goal, int pointValue) : base(goal, pointValue){}
+    public SimpleGoal(string goal, string goalDescription, int pointValue) : base(goal, goalDescription, pointValue){}
 
     // Methods
     public override void RecordEvent()

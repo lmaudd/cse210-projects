@@ -5,12 +5,14 @@ public abstract class Goal
     // Member variables
     private int _completionPoints;
     private bool _isComplete;
+    private string _goalDescription;
     private string _goal;
 
     // Constructor
-    public Goal(string goal, int completionPoints)
+    public Goal(string goal, string goalDescription, int completionPoints)
     {
         _completionPoints = completionPoints;
+        _goalDescription = goalDescription;
         _isComplete = false;
         _goal = goal;   
     }
