@@ -29,6 +29,11 @@ class Program
                         case "3": // User has selected "Checklist Goal"
                             // Code to create checklist goal...
                             break;
+
+                        default: // User has given invalid input
+                            Console.WriteLine("~~ Invalid User Input ~~");
+                            break;
+
                     }
 
                     break;
@@ -51,6 +56,10 @@ class Program
 
                 case "6": // User has selected "Quit"
                     Console.WriteLine("Thank you for using.");
+                    break;
+                
+                default: // User has given invalid input
+                    Console.WriteLine("~~ Invalid User Input ~~");
                     break;
             }        
         }
