@@ -59,7 +59,7 @@ public class ChecklistGoal : Goal
             checkMark = "X";
         }
 
-        string line = $"  {n}. [{checkMark}] {_goal} ({_goalDescription})";
+        string line = $"  {n}. [{checkMark}] {_goal} ({_goalDescription}) {_timesCompleted}/{_goalCompleted}";
         Console.WriteLine(line);
     }
 }

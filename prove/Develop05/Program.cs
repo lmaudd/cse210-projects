@@ -1,4 +1,7 @@
-using System;
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/exception-handling-statementsusing System;
+// https://www.w3schools.com/cs/cs_switch.php
+
+using System.IO.Compression;
 using System.Runtime.CompilerServices;
 
 class Program
@@ -15,8 +18,11 @@ class Program
         // Program Running Loop
         while (mainOption != "6")
         {
-            mainOption = MainMenuInquiry();
+            // Get total points & show first menu
+            int points = SumPoints(goals);
+            mainOption = MainMenuInquiry(points);
 
+            // Main Loop
             switch(mainOption)
             {
                 case "1": // User has selected "Create New Goal"
@@ -76,25 +82,32 @@ class Program
                             string cPointValueString = Console.ReadLine();
                             int cPointValue = Int32.Parse(cPointValueString);
 
+                            // Obtain Times Goal Should be Completed
+                            Console.Write("  - How times would you like to complete this goal? ");
+                            string cGoalCompletedString = Console.ReadLine();
+                            int cGoalCompleted = Int32.Parse(cGoalCompletedString);
+
+                            // Obtain Bonus Point Value (for completing n times)
+                            Console.Write($"  - How many points should you get for completing the goal {cGoalCompleted} times? ");
+                            string cBonusPointsString = Console.ReadLine();
+                            int cBonusPoints = Int32.Parse(cBonusPointsString);
+
                             // Instantiate Goal, Save to List, & Break
-                            EternalGoal cg = new EternalGoal(cGoal, cGoalDescription, cPointValue);
+                            ChecklistGoal cg = new ChecklistGoal(cBonusPoints, cGoalCompleted, cGoal, cGoalDescription, cPointValue);
                             goals.Add(cg);
                             break;
 
                         default: // User has given invalid input
                             Console.WriteLine("~~ Invalid User Input ~~");
+                            Console.ReadLine();
                             break;
                     }
 
                     break;
 
                 case "2": // User has selected "List Goals"
-                    int n = 1;
-                    foreach (Goal g in goals)
-                    {
-                        g.DisplayGoal(n);
-                        n++;
-                    }
+                    ListGoals(goals);
+                    Console.ReadLine(); // Wait for enter to close
                     break;
 
                 case "3": // User has selected "Save Goals"
@@ -106,23 +119,67 @@ class Program
                     break;
 
                 case "5": // User has selected "Record Event"
-                    // Code to record an event...
+                    // Obtain the index of the event to record
+                    ListGoals(goals);
+                    Console.Write($"\nWhich event would you like to record? ");
+                    string eventString = Console.ReadLine();
+                    int eventIndex = Int32.Parse(eventString) - 1; // Decrease by one to account for 0 indexing
+
+                    // Record Event
+                    try
+                    {
+                        goals[eventIndex].RecordEvent();
+                        int pointValue = goals[eventIndex].GetTotalPoints();
+                        Console.WriteLine($"Congratualtions! This goal has accumulated you {pointValue} points!");
+                        Console.ReadLine();
+                    }
+
+                    catch (Exception)
+                    {
+                        Console.WriteLine("~~ Invalid User Input ~~");
+                        Console.ReadLine();
+                    }
+                    
                     break;
 
                 case "6": // User has selected "Quit"
-                    Console.WriteLine("Thank you for using.\n");
+                    Console.WriteLine("Thank you for using Eternal Quest.\n");
                     break;
                 
                 default: // User has given invalid input
                     Console.WriteLine("~~ Invalid User Input ~~");
+                    Console.ReadLine();
                     break;
             }        
         }
     }
 
-    static string MainMenuInquiry()
+    static void ListGoals(List<Goal> goals)
+    {
+        int n = 1;
+        foreach (Goal g in goals)
+        {
+            g.DisplayGoal(n);
+            n++;
+        }
+    }
+
+    static int SumPoints(List<Goal> goals)
+    {
+        int points = 0;
+
+        foreach (Goal g in goals)
+        {
+            points += g.GetTotalPoints();
+        }
+
+        return points;
+    }
+
+    static string MainMenuInquiry(int points)
     {
         Console.Clear();
+        Console.WriteLine($"\nPoints: {points}\n");
         Console.WriteLine("Menu Options:");
         Console.WriteLine("  1. Create New Goal ");
         Console.WriteLine("  2. List Goals      ");
@@ -130,7 +187,7 @@ class Program
         Console.WriteLine("  4. Load Goals      ");
         Console.WriteLine("  5. Record Event    ");  
         Console.WriteLine("  6. Quit            ");    
-        Console.Write("Select a choice from the menu: ");   
+        Console.Write($"\nSelect a choice from the menu: ");   
         return Console.ReadLine();
     }
 
@@ -140,7 +197,7 @@ class Program
         Console.WriteLine("  1. Simple Goal    ");
         Console.WriteLine("  2. Eternal Goal   ");
         Console.WriteLine("  3. Checklist Goal ");  
-        Console.Write("Select a choice from the menu: ");   
+        Console.Write($"\nSelect a choice from the menu: ");   
         return Console.ReadLine();
     }
 }
