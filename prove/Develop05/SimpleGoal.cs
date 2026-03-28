@@ -8,12 +8,12 @@ public class SimpleGoal : Goal
     // Methods
     public override void RecordEvent()
     {
-        SetStatus(true);
+        SetIsComplete(true);
     }
 
     public override int GetTotalPoints()
     {
-        bool status = GetStatus();
+        bool status = GetIsComplete();
         int completionPoints = 0;
 
         if (status == true)

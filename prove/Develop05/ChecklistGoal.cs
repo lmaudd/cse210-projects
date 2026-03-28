@@ -27,7 +27,7 @@ public class ChecklistGoal : Goal
         // If they've done enough events, set true
         if (_timesCompleted == _goalCompleted)
         {
-            SetStatus(true);
+            SetIsComplete(true);
         }
     }
 
@@ -35,7 +35,7 @@ public class ChecklistGoal : Goal
     {
         // Define variables
         int completionPoints = GetCompletionPoints();
-        bool status = GetStatus();
+        bool status = GetIsComplete();
         int points = 0;
 
         // Add points for each completion event

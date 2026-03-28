@@ -4,26 +4,26 @@ public abstract class Goal
 {
     // Member variables
     private int _completionPoints;
-    private bool _goalStatus;
+    private bool _isComplete;
     private string _goal;
 
     // Constructor
     public Goal(string goal, int completionPoints)
     {
         _completionPoints = completionPoints;
-        _goalStatus = false;
+        _isComplete = false;
         _goal = goal;   
     }
 
     // Get & Set Status
-    public bool GetStatus()
+    public bool GetIsComplete()
     {
-        return _goalStatus;
+        return _isComplete;
     }
         
-    public void SetStatus(bool newStatus)
+    public void SetIsComplete(bool newStatus)
     {
-        _goalStatus = newStatus;
+        _isComplete = newStatus;
     }
 
     // Get & Set Completion Points
