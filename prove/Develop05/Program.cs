@@ -11,51 +11,48 @@ class Program
         {
             mainOption = MainMenuInquiry();
 
-            if (mainOption == "1") // User has selected "Create New Goal"
+            switch(mainOption)
             {
-                goalOption = GoalMenuInquiry();
+                case "1": // User has selected "Create New Goal"
+                    goalOption = GoalMenuInquiry();
+                    
+                    switch (goalOption)
+                    {
+                        case "1": // User has selected "Simple Goal"
+                            // Code to create simple goal...
+                            break;
 
-                if (goalOption == "1") // User has selected "Simple Goal"
-                {
-                    // Code to create simple goal...
-                }
+                        case "2": // User has selected "Eternal Goal"
+                            // Code to create eternal goal...
+                            break;
 
-                if (goalOption == "3") // User has selected "Eternal Goal"
-                {
-                    // Code to create eternal goal...
-                }
+                        case "3": // User has selected "Checklist Goal"
+                            // Code to create checklist goal...
+                            break;
+                    }
 
-                if (goalOption == "3") // User has selected "Checklist Goal"
-                {
-                    // Code to create checklist goal...
-                }
-            }
+                    break;
 
-            if (mainOption == "2") // User has selected "List Goals"
-            {
-                // Code to list goals...
-            }
+                case "2": // User has selected "List Goals"
+                    // Code to list goals...
+                    break;
 
-            if (mainOption == "3") // User has selected "Save Goals"
-            {
-                // Code to save goals
-            }
+                case "3": // User has selected "Save Goals"
+                    // Code to save goals
+                    break;
 
-            if (mainOption == "4") // User has selected "Load Goals"
-            {
-                // Code to load goals...
-            }
+                case "4": // User has selected "Load Goals"
+                    // Code to load goals...
+                    break;
 
-            if (mainOption == "5") // User has selected "Record Event"
-            {
-                // Code to record an event...
-            }
+                case "5": // User has selected "Record Event"
+                    // Code to record an event...
+                    break;
 
-            if (mainOption == "6") // User has selected "Quit"
-            {
-                Console.WriteLine("Thank you for using.");
-                break;
-            }             
+                case "6": // User has selected "Quit"
+                    Console.WriteLine("Thank you for using.");
+                    break;
+            }        
         }
     }
 
