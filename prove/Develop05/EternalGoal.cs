@@ -35,4 +35,14 @@ public class EternalGoal : Goal
         string line = $"  {n}. [{checkMark}] {_goal} ({_goalDescription})";
         Console.WriteLine(line);
     }
+
+    public override string GetStringRepresentation()
+    {
+        return "";
+    }
+
+    public override string CreateGoal()
+    {
+        return "";
+    }
 }

@@ -62,4 +62,14 @@ public class ChecklistGoal : Goal
         string line = $"  {n}. [{checkMark}] {_goal} ({_goalDescription}) {_timesCompleted}/{_goalCompleted}";
         Console.WriteLine(line);
     }
+
+    public override string GetStringRepresentation()
+    {
+        return "";
+    }
+
+    public override string CreateGoal()
+    {
+        return "";
+    }
 }

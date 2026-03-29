@@ -45,4 +45,8 @@ public abstract class Goal
     public abstract int GetTotalPoints();
 
     public abstract void DisplayGoal(int n);
+
+    // The Factory Pattern
+    public abstract string GetStringRepresentation();
+    public abstract string CreateGoal();
 }
