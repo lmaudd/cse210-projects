@@ -10,20 +10,17 @@ public class SimpleGoal : Goal
     // Methods
     public override void RecordEvent()
     {
-        SetIsComplete(true);
+        _isComplete = true;
     }
 
     public override int GetTotalPoints()
     {
-        bool status = GetIsComplete();
-        int completionPoints = 0;
-
-        if (status == true)
+        if (_isComplete == true)
         {
-            completionPoints = GetCompletionPoints();
+            return _completionPoints;
         }
 
-        return completionPoints;
+        return 0;
     }
 
     public override void DisplayGoal(int n)

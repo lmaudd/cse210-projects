@@ -27,22 +27,18 @@ public class ChecklistGoal : Goal
         // If they've done enough events, set true
         if (_timesCompleted == _goalCompleted)
         {
-            SetIsComplete(true);
+            _isComplete = true;
         }
     }
 
     public override int GetTotalPoints()
     {
-        // Define variables
-        int completionPoints = GetCompletionPoints();
-        bool status = GetIsComplete();
-        int points = 0;
-
         // Add points for each completion event
-        points += completionPoints * _timesCompleted;
+        int points = 0;
+        points += _completionPoints * _timesCompleted;
 
         // Add bonus points if completed enough times
-        if (status == true)
+        if (_isComplete == true)
         {
             points += _bonusPoints;
         }

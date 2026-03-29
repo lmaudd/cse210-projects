@@ -19,8 +19,7 @@ public class EternalGoal : Goal
     
     public override int GetTotalPoints()
     {
-        int completionPoints = GetCompletionPoints();
-        return completionPoints * _timesCompleted;
+        return _completionPoints * _timesCompleted;
     }
 
     public override void DisplayGoal(int n)
