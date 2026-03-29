@@ -66,7 +66,7 @@ public class SimpleGoal : Goal
         SetGoalDescription(newGoalDescription);
         SetCompletionPoints(newCompletionPoints);
 
-        if (newIsComplete == "true")
+        if (newIsComplete == "True")
         {
             SetIsComplete(true);
         }

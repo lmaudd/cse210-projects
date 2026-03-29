@@ -34,11 +34,13 @@ public class ChecklistGoal : Goal
     public override int GetTotalPoints()
     {
         // Add points for each completion event
+        int completionPoints = GetCompletionPoints();
         int points = 0;
-        points += GetCompletionPoints() * _timesCompleted;
+        points += completionPoints * _timesCompleted;
 
         // Add bonus points if completed enough times
-        if (GetIsComplete() == true)
+        bool isComplete = GetIsComplete();
+        if (isComplete == true)
         {
             points += _bonusPoints;
         }
@@ -49,19 +51,27 @@ public class ChecklistGoal : Goal
     public override void DisplayGoal(int n)
     {   
         string checkMark = " ";
+        bool isComplete = GetIsComplete();
+        string goal = GetGoal();
+        string goalDescription = GetGoalDescription();
 
-        if (GetIsComplete() == true)
+        if (isComplete == true)
         {
             checkMark = "X";
         }
 
-        string line = $"  {n}. [{checkMark}] {GetGoal()} ({GetGoalDescription()}) {_timesCompleted}/{_goalCompleted}";
+        string line = $"  {n}. [{checkMark}] {goal} ({goalDescription}) {_timesCompleted}/{_goalCompleted}";
         Console.WriteLine(line);
     }
 
     public override string GetStringRepresentation()
     {
-        return $"CG:{GetGoal()},{GetGoalDescription()},{GetIsComplete()},{GetCompletionPoints()}, {_timesCompleted}, {_goalCompleted}, {_bonusPoints}";
+        string newGoal = GetGoal();
+        string newGoalDescription = GetGoalDescription();
+        bool newIsComplete = GetIsComplete();
+        int newCompletionPoints = GetCompletionPoints();
+
+        return $"CG:{newGoal},{newGoalDescription},{newIsComplete},{newCompletionPoints},{_timesCompleted},{_goalCompleted},{_bonusPoints}";
     }
 
     public override void CreateGoal(string StringRepresentation)
@@ -77,7 +87,7 @@ public class ChecklistGoal : Goal
 
         string boolean =  parts[2];
 
-        if (boolean == "true")
+        if (boolean == "True")
         {
             SetIsComplete(true);
         }
