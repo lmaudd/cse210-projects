@@ -64,8 +64,8 @@ public class ChecklistGoal : Goal
         return $"CG:{_goal},{_goalDescription},{_isComplete},{_completionPoints}, {_timesCompleted}, {_goalCompleted}, {_bonusPoints}";
     }
 
-    public override string CreateGoal()
+    public override void CreateGoal(string StringRepresentation)
     {
-        return "";
+        
     }
 }

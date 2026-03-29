@@ -26,7 +26,7 @@ public abstract class Goal
 
     public abstract string GetStringRepresentation(); // 
 
-    public abstract string CreateGoal(); // 
+    public abstract void CreateGoal(string StringRepresentation); // 
 
     // Get & Set _isComplete ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public bool SetIsComplete()

@@ -40,8 +40,8 @@ public class EternalGoal : Goal
         return $"EG:{_goal},{_goalDescription},{_timesCompleted},{_completionPoints}";
     }
 
-    public override string CreateGoal()
+    public override void CreateGoal(string StringRepresentation)
     {
-        return "";
+        
     }
 }

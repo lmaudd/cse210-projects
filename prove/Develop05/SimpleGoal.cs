@@ -41,8 +41,8 @@ public class SimpleGoal : Goal
         return $"SG:{_goal},{_goalDescription},{_isComplete},{_completionPoints}";
     }
 
-    public override string CreateGoal()
+    public override void CreateGoal(string StringRepresentation)
     {
-        return "";
+        
     }
 }
