@@ -19,34 +19,46 @@ public class EternalGoal : Goal
     
     public override int GetTotalPoints()
     {
-        return GetCompletionPoints() * _timesCompleted;
+        int completionPoints = GetCompletionPoints();
+        return completionPoints * _timesCompleted;
     }
 
     public override void DisplayGoal(int n)
     {   
         string checkMark = " ";
+        bool isComplete = GetIsComplete();
+        string goal = GetGoal();
+        string goalDescription = GetGoalDescription();
 
-        if (GetIsComplete() == true)
+        if (isComplete == true)
         {
             checkMark = "X";
         }
 
-        string line = $"  {n}. [{checkMark}] {GetGoal()} ({GetGoalDescription()})";
+        string line = $"  {n}. [{checkMark}] {goal} ({goalDescription})";
         Console.WriteLine(line);
     }
 
     public override string GetStringRepresentation()
     {
-        return $"EG:{GetGoal()},{GetGoalDescription()},{_timesCompleted},{GetCompletionPoints()}";
+        string goal = GetGoal();
+        string goalDescription = GetGoalDescription();
+        int completionPoints = GetCompletionPoints();
+
+        return $"EG:{goal},{goalDescription},{_timesCompleted},{completionPoints}";
     }
 
     public override void CreateGoal(string StringRepresentation)
     {
         string[] parts = StringRepresentation.Split(",");
+        
+        string newGoal = parts[0];
+        string newGoalDescription = parts[1];
+        int newCompletionStatus = Int32.Parse(parts[3]);
 
-        SetGoal(parts[0]);
-        SetGoalDescription(parts[1]);
+        SetGoal(newGoal);
+        SetGoalDescription(newGoalDescription);
         _timesCompleted = Int32.Parse(parts[2]);
-        SetCompletionPoints(Int32.Parse(parts[3]));
+        SetCompletionPoints(newCompletionStatus);
     }
 }
