@@ -17,9 +17,11 @@ public class SimpleGoal : Goal
 
     public override int GetTotalPoints()
     {
-        if (GetIsComplete() == true)
+        bool isComplete = GetIsComplete();
+        if (isComplete == true)
         {
-            return GetCompletionPoints();
+            int completionPoints = GetCompletionPoints();
+            return completionPoints;
         }
 
         return 0;
@@ -27,35 +29,44 @@ public class SimpleGoal : Goal
 
     public override void DisplayGoal(int n)
     {   
+        bool isComplete = GetIsComplete();
         string checkMark = " ";
 
-        if (GetIsComplete() == true)
+        if (isComplete == true)
         {
             checkMark = "X";
         }
 
-        string line = $"  {n}. [{checkMark}] {GetGoal()} ({GetGoalDescription()})";
+        string goal = GetGoal();
+        string goalDescription = GetGoalDescription();
+        string line = $"  {n}. [{checkMark}] {goal} ({goalDescription})";
         Console.WriteLine(line);
     }
 
     public override string GetStringRepresentation()
     {
-        return $"SG:{GetGoal()},{GetGoalDescription},{GetIsComplete},{GetCompletionPoints}";
+        string writeGoal = GetGoal();
+        string writeGoalDescription = GetGoalDescription();
+        bool writeIsComplete = GetIsComplete();
+        int writeGetCompletionPoints = GetCompletionPoints();
+
+        return $"SG:{writeGoal},{writeGoalDescription},{writeIsComplete},{writeGetCompletionPoints}";
     }
 
     public override void CreateGoal(string StringRepresentation)
     {
         string[] parts = StringRepresentation.Split(",");
+        
+        string newGoal = parts[0];
+        string newGoalDescription = parts[1];
+        string newIsComplete = parts[2];
+        int newCompletionPoints = Int32.Parse(parts[3]);
 
-        SetGoal(parts[0]);
-        SetGoalDescription(parts[1]);
-        SetCompletionPoints(Int32.Parse(parts[3]));
+        SetGoal(newGoal);
+        SetGoalDescription(newGoalDescription);
+        SetCompletionPoints(newCompletionPoints);
 
-        SetGoal(parts[0]);
-
-        string boolean =  parts[2];
-
-        if (boolean == "true")
+        if (newIsComplete == "true")
         {
             SetIsComplete(true);
         }
