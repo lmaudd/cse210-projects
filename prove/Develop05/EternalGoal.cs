@@ -2,16 +2,16 @@ using System;
 
 public class EternalGoal : Goal
 {
-    // Member Variables
+    // Member Variables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     private int _timesCompleted;
 
-    // Constructor 
+    // Constructor ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public EternalGoal(string goal, string goalDescription, int pointValue) : base(goal, goalDescription, pointValue)
     {
         _timesCompleted = 0;
     }
 
-    // Methods
+    // Methods ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public override void RecordEvent()
     {
         _timesCompleted++;

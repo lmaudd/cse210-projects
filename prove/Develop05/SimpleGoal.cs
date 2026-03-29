@@ -6,10 +6,10 @@ using System.Security.Cryptography.X509Certificates;
 
 public class SimpleGoal : Goal
 {
-    // Constructor
+    // Constructor ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public SimpleGoal(string goal, string goalDescription, int pointValue) : base(goal, goalDescription, pointValue){}
 
-    // Methods
+    // Methods ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public override void RecordEvent()
     {
         _isComplete = true;

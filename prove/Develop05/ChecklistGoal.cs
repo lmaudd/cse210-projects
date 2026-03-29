@@ -2,7 +2,7 @@ using System;
 
 public class ChecklistGoal : Goal
 {
-    // Member Variables
+    // Member Variables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     private int _timesCompleted;
     private int _goalCompleted;
     private int _bonusPoints;
@@ -15,7 +15,7 @@ public class ChecklistGoal : Goal
         _timesCompleted = 0;    
     }
 
-    // Methods
+    // Methods ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public override void RecordEvent()
     {
         // If they haven't completed, iterate
