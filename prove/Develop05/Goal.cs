@@ -2,13 +2,13 @@ using System;
 
 public abstract class Goal
 {
-    // Member variables
+    // Member variables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    protected string _goal;
     protected int _completionPoints;
     protected bool _isComplete;
     protected string _goalDescription;
-    protected string _goal;
 
-    // Constructor
+    // Constructor ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public Goal(string goal, string goalDescription, int completionPoints)
     {
         _completionPoints = completionPoints;
@@ -17,14 +17,47 @@ public abstract class Goal
         _goal = goal;   
     }
 
-    // Other Methods (Abstract)
-    public abstract void RecordEvent();
+    // Abstract Methods ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public abstract void RecordEvent(); // 
 
-    public abstract int GetTotalPoints();
+    public abstract int GetTotalPoints(); // 
 
-    public abstract void DisplayGoal(int n);
+    public abstract void DisplayGoal(int n); // 
 
-    // The Factory Pattern
-    public abstract string GetStringRepresentation();
-    public abstract string CreateGoal();
+    public abstract string GetStringRepresentation(); // 
+
+    public abstract string CreateGoal(); // 
+
+    // Get & Set _isComplete ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public bool SetIsComplete()
+    {
+        return _isComplete;
+    }
+        
+    public void SetIsComplete(bool newStatus)
+    {
+        _isComplete = newStatus;
+    }
+
+    // Get & Set _completionPoints ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public int GetCompletionPoints()
+    {
+        return _completionPoints;
+    }
+
+    public void SetCompletionPoints(int newPoints)
+    {
+        _completionPoints = newPoints;
+    }
+
+    // Get _goal & _goalDescription ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public string GetGoal()
+    {
+        return _goal;
+    }
+
+    public string GetGoalDescription()
+    {
+        return _goalDescription;
+    }
 }
