@@ -1,0 +1,4 @@
+SG:Drink water,I would like to drink more water,False,25
+EG:Scripture study,I want to read my scriptures every day ,0,10
+CG:Cook italian food,I want to prepare italian meals,False,10, 0, 3, 45
+SG:Go for a run,Run 1 mile outside,False,20

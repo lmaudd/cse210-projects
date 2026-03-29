@@ -121,7 +121,36 @@ class Program
                     break;
 
                 case "4": // User has selected "Load Goals"
-                    // Code to load goals...
+                    string[] lines = System.IO.File.ReadAllLines("goalFile.txt");
+
+                    foreach (string line in lines)
+                    {
+                        string[] parts = line.Split(":");
+
+                        string goalType = parts[0];
+                        string StringRepresentation = parts[1];
+
+                        switch (goalType)
+                        {
+                            case "SG":
+                                SimpleGoal sg = new SimpleGoal("", "", -1);
+                                sg.CreateGoal(StringRepresentation);
+                                goals.Add(sg);
+                                break;
+                            
+                            case "EG":
+                                EternalGoal eg = new EternalGoal("", "", -1);
+                                eg.CreateGoal(StringRepresentation);
+                                goals.Add(eg);
+                                break;
+
+                            case "CG":
+                                ChecklistGoal cg = new ChecklistGoal(-1, -1, "", "", -1);
+                                cg.CreateGoal(StringRepresentation);
+                                goals.Add(cg);
+                                break;
+                        }
+                    }
                     break;
 
                 case "5": // User has selected "Record Event"
@@ -139,7 +168,6 @@ class Program
                         Console.WriteLine($"Congratualtions! This goal has accumulated you {pointValue} points!");
                         Console.ReadLine();
                     }
-
                     catch (Exception)
                     {
                         Console.WriteLine("~~ Invalid User Input ~~");
