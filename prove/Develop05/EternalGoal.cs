@@ -37,7 +37,7 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return "";
+        return $"EG:{_goal},{_goalDescription},{_timesCompleted},{_completionPoints}";
     }
 
     public override string CreateGoal()
