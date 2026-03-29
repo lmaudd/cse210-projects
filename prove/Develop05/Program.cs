@@ -111,7 +111,13 @@ class Program
                     break;
 
                 case "3": // User has selected "Save Goals"
-                    // Code to save goals
+                    using (StreamWriter outputFile = new StreamWriter("goalFile.txt"))
+                    {
+                        foreach (Goal goal in goals)
+                        {
+                            outputFile.WriteLine(goal.GetStringRepresentation());
+                        }
+                    }
                     break;
 
                 case "4": // User has selected "Load Goals"
