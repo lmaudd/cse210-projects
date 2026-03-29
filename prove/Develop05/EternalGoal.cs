@@ -42,6 +42,11 @@ public class EternalGoal : Goal
 
     public override void CreateGoal(string StringRepresentation)
     {
-        
+        string[] parts = StringRepresentation.Split(",");
+
+        _goal = parts[0];
+        _goalDescription = parts[1];
+        _timesCompleted = Int32.Parse(parts[2]);
+        _completionPoints = Int32.Parse(parts[3]);
     }
 }

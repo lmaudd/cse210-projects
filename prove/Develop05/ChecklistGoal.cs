@@ -66,6 +66,25 @@ public class ChecklistGoal : Goal
 
     public override void CreateGoal(string StringRepresentation)
     {
-        
+        string[] parts = StringRepresentation.Split(",");
+
+        _goal = parts[0];
+        _goalDescription = parts[1];
+        _completionPoints = Int32.Parse(parts[3]);
+        _timesCompleted = Int32.Parse(parts[4]);
+        _goalCompleted = Int32.Parse(parts[5]);
+        _bonusPoints = Int32.Parse(parts[6]);
+
+        string boolean =  parts[2];
+
+        if (boolean == "true")
+        {
+            _isComplete = true;
+        }
+
+        else
+        {
+            _isComplete = false;
+        }
     }
 }
