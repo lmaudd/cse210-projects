@@ -12,14 +12,14 @@ public class SimpleGoal : Goal
     // Methods ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public override void RecordEvent()
     {
-        _isComplete = true;
+        SetIsComplete(true);
     }
 
     public override int GetTotalPoints()
     {
-        if (_isComplete == true)
+        if (GetIsComplete() == true)
         {
-            return _completionPoints;
+            return GetCompletionPoints();
         }
 
         return 0;
@@ -29,38 +29,39 @@ public class SimpleGoal : Goal
     {   
         string checkMark = " ";
 
-        if (_isComplete == true)
+        if (GetIsComplete() == true)
         {
             checkMark = "X";
         }
 
-        string line = $"  {n}. [{checkMark}] {_goal} ({_goalDescription})";
+        string line = $"  {n}. [{checkMark}] {GetGoal()} ({GetGoalDescription()})";
         Console.WriteLine(line);
     }
 
     public override string GetStringRepresentation()
     {
-        return $"SG:{_goal},{_goalDescription},{_isComplete},{_completionPoints}";
+        return $"SG:{GetGoal()},{GetGoalDescription},{GetIsComplete},{GetCompletionPoints}";
     }
 
     public override void CreateGoal(string StringRepresentation)
     {
         string[] parts = StringRepresentation.Split(",");
 
-        _goal = parts[0];
-        _goalDescription = parts[1];
-        _completionPoints = Int32.Parse(parts[3]);
+        SetGoal(parts[0]);
+        SetGoalDescription(parts[1]);
+        SetCompletionPoints(Int32.Parse(parts[3]));
+
+        SetGoal(parts[0]);
 
         string boolean =  parts[2];
 
         if (boolean == "true")
         {
-            _isComplete = true;
+            SetIsComplete(true);
         }
-
         else
         {
-            _isComplete = false;
+            SetIsComplete(false);
         }
     }
 }

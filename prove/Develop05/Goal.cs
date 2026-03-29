@@ -3,10 +3,10 @@ using System;
 public abstract class Goal
 {
     // Member variables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    protected string _goal;
-    protected int _completionPoints;
-    protected bool _isComplete;
-    protected string _goalDescription;
+    private string _goal;
+    private int _completionPoints;
+    private bool _isComplete;
+    private string _goalDescription;
 
     // Constructor ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public Goal(string goal, string goalDescription, int completionPoints)
@@ -29,7 +29,7 @@ public abstract class Goal
     public abstract void CreateGoal(string StringRepresentation); // 
 
     // Get & Set _isComplete ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    public bool SetIsComplete()
+    public bool GetIsComplete()
     {
         return _isComplete;
     }
@@ -50,14 +50,25 @@ public abstract class Goal
         _completionPoints = newPoints;
     }
 
-    // Get _goal & _goalDescription ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Get & Set _goal ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public string GetGoal()
     {
         return _goal;
     }
 
+    public void SetGoal(string newGoal)
+    {
+        _goal = newGoal;
+    }
+
+    // Get & Set _goalDescription ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public string GetGoalDescription()
     {
         return _goalDescription;
+    }
+
+    public void SetGoalDescription(string newGoalDescription)
+    {
+        _goalDescription = newGoalDescription;
     }
 }

@@ -27,7 +27,7 @@ public class ChecklistGoal : Goal
         // If they've done enough events, set true
         if (_timesCompleted == _goalCompleted)
         {
-            _isComplete = true;
+            SetIsComplete(true);
         }
     }
 
@@ -35,10 +35,10 @@ public class ChecklistGoal : Goal
     {
         // Add points for each completion event
         int points = 0;
-        points += _completionPoints * _timesCompleted;
+        points += GetCompletionPoints() * _timesCompleted;
 
         // Add bonus points if completed enough times
-        if (_isComplete == true)
+        if (GetIsComplete() == true)
         {
             points += _bonusPoints;
         }
@@ -50,27 +50,27 @@ public class ChecklistGoal : Goal
     {   
         string checkMark = " ";
 
-        if (_isComplete == true)
+        if (GetIsComplete() == true)
         {
             checkMark = "X";
         }
 
-        string line = $"  {n}. [{checkMark}] {_goal} ({_goalDescription}) {_timesCompleted}/{_goalCompleted}";
+        string line = $"  {n}. [{checkMark}] {GetGoal()} ({GetGoalDescription()}) {_timesCompleted}/{_goalCompleted}";
         Console.WriteLine(line);
     }
 
     public override string GetStringRepresentation()
     {
-        return $"CG:{_goal},{_goalDescription},{_isComplete},{_completionPoints}, {_timesCompleted}, {_goalCompleted}, {_bonusPoints}";
+        return $"CG:{GetGoal()},{GetGoalDescription()},{GetIsComplete()},{GetCompletionPoints()}, {_timesCompleted}, {_goalCompleted}, {_bonusPoints}";
     }
 
     public override void CreateGoal(string StringRepresentation)
     {
         string[] parts = StringRepresentation.Split(",");
 
-        _goal = parts[0];
-        _goalDescription = parts[1];
-        _completionPoints = Int32.Parse(parts[3]);
+        SetGoal(parts[0]);
+        SetGoalDescription(parts[1]);
+        SetCompletionPoints(Int32.Parse(parts[3]));
         _timesCompleted = Int32.Parse(parts[4]);
         _goalCompleted = Int32.Parse(parts[5]);
         _bonusPoints = Int32.Parse(parts[6]);
@@ -79,12 +79,11 @@ public class ChecklistGoal : Goal
 
         if (boolean == "true")
         {
-            _isComplete = true;
+            SetIsComplete(true);
         }
-
         else
         {
-            _isComplete = false;
+            SetIsComplete(false);
         }
     }
 }

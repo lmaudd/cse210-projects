@@ -19,34 +19,34 @@ public class EternalGoal : Goal
     
     public override int GetTotalPoints()
     {
-        return _completionPoints * _timesCompleted;
+        return GetCompletionPoints() * _timesCompleted;
     }
 
     public override void DisplayGoal(int n)
     {   
         string checkMark = " ";
 
-        if (_isComplete == true)
+        if (GetIsComplete() == true)
         {
             checkMark = "X";
         }
 
-        string line = $"  {n}. [{checkMark}] {_goal} ({_goalDescription})";
+        string line = $"  {n}. [{checkMark}] {GetGoal()} ({GetGoalDescription()})";
         Console.WriteLine(line);
     }
 
     public override string GetStringRepresentation()
     {
-        return $"EG:{_goal},{_goalDescription},{_timesCompleted},{_completionPoints}";
+        return $"EG:{GetGoal()},{GetGoalDescription()},{_timesCompleted},{GetCompletionPoints()}";
     }
 
     public override void CreateGoal(string StringRepresentation)
     {
         string[] parts = StringRepresentation.Split(",");
 
-        _goal = parts[0];
-        _goalDescription = parts[1];
+        SetGoal(parts[0]);
+        SetGoalDescription(parts[1]);
         _timesCompleted = Int32.Parse(parts[2]);
-        _completionPoints = Int32.Parse(parts[3]);
+        SetCompletionPoints(Int32.Parse(parts[3]));
     }
 }
