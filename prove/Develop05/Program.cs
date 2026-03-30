@@ -14,13 +14,15 @@ class Program
         // Define User Input Variables
         string mainOption = "";
         string goalOption = "";
+        string userClassification = "";
 
         // Program Running Loop
         while (mainOption != "6")
         {
             // Get total points & show first menu
             int points = SumPoints(goals);
-            mainOption = MainMenuInquiry(points);
+            userClassification = ClassifyUser(points);
+            mainOption = MainMenuInquiry(points, userClassification);
 
             // Main Loop
             switch(mainOption)
@@ -210,9 +212,67 @@ class Program
         return points;
     }
 
-    static string MainMenuInquiry(int points)
+    static string ClassifyUser(int points)
+    {
+        string userClassification;
+
+        if (points > 5000)
+        {
+            userClassification = "Paragon";
+        }
+
+        else if (points > 3000)
+        {
+            userClassification = "Sovereign";
+        }
+
+        else if (points > 2000)
+        {
+            userClassification = "Warlord";
+        }
+
+        else if (points > 1500)
+        {
+            userClassification = "Commander";
+        }
+
+        else if (points > 1200)
+        {
+            userClassification = "Champion";
+        }
+
+        else if (points > 800)
+        {
+            userClassification = "Adept";
+        }
+
+        else if (points > 500)
+        {
+            userClassification = "Vanguard";
+        }
+
+        else if (points > 250)
+        {
+            userClassification = "Apprentice";
+        }
+
+        else if (points > 100)
+        {
+            userClassification = "Novice";
+        }
+
+        else
+        {
+            userClassification = "Peasant";
+        }   
+
+        return userClassification;
+    }
+
+    static string MainMenuInquiry(int points, string title)
     {
         Console.Clear();
+        Console.WriteLine($"\nTitle: {title}");
         Console.WriteLine($"\nPoints: {points}\n");
         Console.WriteLine("Menu Options:");
         Console.WriteLine("  1. Create New Goal ");
