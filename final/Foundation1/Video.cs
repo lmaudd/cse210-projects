@@ -24,7 +24,7 @@ public class Video
     {
         int numberComments = GetNumberComments();
 
-        Console.WriteLine($"Name: {_title},  Author: {_author},  Length: {_length},  Comment Count: {numberComments}");
+        Console.WriteLine($"\n'{_title}' by {_author}; {_length} long with {numberComments} comments:");
 
         foreach (Comment com in _comments)
         {
