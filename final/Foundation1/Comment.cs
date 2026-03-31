@@ -2,9 +2,11 @@ using System;
 
 public class Comment
 {
-    public string _name;
-    public string _text;
+    // Attributes
+    public string _name; // Name of commentor
+    public string _text; // Full text of comment
 
+    // Constructor
     public Comment(string name, string text)
     {
         _name = name;

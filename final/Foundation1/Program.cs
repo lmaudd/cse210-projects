@@ -91,11 +91,12 @@ class Program
         Video youtubeVideo4 = new Video(video4Title, video4Author, video4Length, video4Comments);
 
         // Main Program
+        // Create a list of all pre-defined videos
         List<Video> videos = new List<Video>() {youtubeVideo1, youtubeVideo2, youtubeVideo3, youtubeVideo4};
 
-        foreach (Video vid in videos)
+        foreach (Video vid in videos) // Iteratete through all videos
         {
-            vid.DisplayVideoSummary();
+            vid.DisplayVideoSummary(); // Display video summary
         }
     }
 }
