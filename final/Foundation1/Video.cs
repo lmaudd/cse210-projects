@@ -14,4 +14,23 @@ public class Video
         _length = length;
         _comments = comments;
     }
+
+    public int GetNumberComments()
+    {
+        return _comments.Count();
+    }
+
+    public void DisplayVideoSummary()
+    {
+        int numberComments = GetNumberComments();
+
+        Console.WriteLine($"Name: {_title},  Author: {_author},  Length: {_length},  Comment Count: {numberComments}");
+
+        foreach (Comment com in _comments)
+        {
+            string author = com._name;
+            string text = com._text;
+            Console.WriteLine($"  - {author}: {text}");
+        }
+    }
 }
