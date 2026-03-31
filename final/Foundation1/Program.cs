@@ -89,5 +89,13 @@ class Program
         List<Comment> video4Comments = new List<Comment> {video4Comment1, video4Comment2, video4Comment3};
 
         Video youtubeVideo4 = new Video(video4Title, video4Author, video4Length, video4Comments);
+
+        // Main Program
+        List<Video> videos = new List<Video>() {youtubeVideo1, youtubeVideo2, youtubeVideo3, youtubeVideo4};
+
+        foreach (Video vid in videos)
+        {
+            vid.DisplayVideoSummary();
+        }
     }
 }
