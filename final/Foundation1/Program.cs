@@ -20,9 +20,9 @@ class Program
         string video1Comment2Name = "Jenny O.";
         string video1Comment3Name = "Samuel B.";
 
-        Comment video1Comment1 = new Comment(video1Comment1Text, video1Comment1Name);
-        Comment video1Comment2 = new Comment(video1Comment2Text, video1Comment2Name);
-        Comment video1Comment3 = new Comment(video1Comment3Text, video1Comment3Name);
+        Comment video1Comment1 = new Comment(video1Comment1Name, video1Comment1Text);
+        Comment video1Comment2 = new Comment(video1Comment2Name, video1Comment2Text);
+        Comment video1Comment3 = new Comment(video1Comment3Name, video1Comment3Text);
         List<Comment> video1Comments = new List<Comment> {video1Comment1, video1Comment2, video1Comment3};
 
         Video youtubeVideo1 = new Video(video1Title, video1Author, video1Length, video1Comments);
@@ -42,10 +42,10 @@ class Program
         string video2Comment3Name = "Sherry F.";
         string video2Comment4Name = "Sharkboy";
 
-        Comment video2Comment1 = new Comment(video2Comment1Text, video2Comment1Name);
-        Comment video2Comment2 = new Comment(video2Comment2Text, video2Comment2Name);
-        Comment video2Comment3 = new Comment(video2Comment3Text, video2Comment3Name);
-        Comment video2Comment4 = new Comment(video2Comment4Text, video2Comment4Name);
+        Comment video2Comment1 = new Comment(video2Comment1Name, video2Comment1Text);
+        Comment video2Comment2 = new Comment(video2Comment2Name, video2Comment2Text);
+        Comment video2Comment3 = new Comment(video2Comment3Name, video2Comment3Text);
+        Comment video2Comment4 = new Comment(video2Comment4Name, video2Comment4Text);
         List<Comment> video2Comments = new List<Comment> {video2Comment1, video2Comment2, video2Comment3, video2Comment4};
 
         Video youtubeVideo2 = new Video(video2Title, video2Author, video2Length, video2Comments);
@@ -63,9 +63,9 @@ class Program
         string video3Comment2Name = "Louis B.";
         string video3Comment3Name = "Wendy W.";
 
-        Comment video3Comment1 = new Comment(video3Comment1Text, video3Comment1Name);
-        Comment video3Comment2 = new Comment(video3Comment2Text, video3Comment2Name);
-        Comment video3Comment3 = new Comment(video3Comment3Text, video3Comment3Name);
+        Comment video3Comment1 = new Comment(video3Comment1Name, video3Comment1Text);
+        Comment video3Comment2 = new Comment(video3Comment2Name, video3Comment2Text);
+        Comment video3Comment3 = new Comment(video3Comment3Name, video3Comment3Text);
         List<Comment> video3Comments = new List<Comment> {video3Comment1, video3Comment2, video3Comment3};
 
         Video youtubeVideo3 = new Video(video3Title, video3Author, video3Length, video3Comments);
@@ -83,9 +83,9 @@ class Program
         string video4Comment2Name = "Sarah S.";
         string video4Comment3Name = "Ben W.";
 
-        Comment video4Comment1 = new Comment(video4Comment1Text, video4Comment1Name);
-        Comment video4Comment2 = new Comment(video4Comment2Text, video4Comment2Name);
-        Comment video4Comment3 = new Comment(video4Comment3Text, video4Comment3Name);
+        Comment video4Comment1 = new Comment(video4Comment1Name, video4Comment1Text);
+        Comment video4Comment2 = new Comment(video4Comment2Name, video4Comment2Text);
+        Comment video4Comment3 = new Comment(video4Comment3Name, video4Comment3Text);
         List<Comment> video4Comments = new List<Comment> {video4Comment1, video4Comment2, video4Comment3};
 
         Video youtubeVideo4 = new Video(video4Title, video4Author, video4Length, video4Comments);

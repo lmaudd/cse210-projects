@@ -30,7 +30,7 @@ public class Video
         {
             string author = com._name;
             string text = com._text;
-            Console.WriteLine($"  - {author}: {text}");
+            Console.WriteLine($"  - {author} says '{text}'");
         }
     }
 }
