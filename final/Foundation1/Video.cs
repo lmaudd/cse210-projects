@@ -3,10 +3,10 @@ using System;
 public class Video
 {
     // Attributes
-    public string _title; // Video Title
-    public string _author; // Video Author (channel)
-    public string _length; // Video Length in minutes
-    public List<Comment> _comments; // List of comment instantiations
+    private string _title; // Video Title
+    private string _author; // Video Author (channel)
+    private string _length; // Video Length in minutes
+    private List<Comment> _comments; // List of comment instantiations
 
     // Constructor
     public Video(string title, string author, string length, List<Comment> comments)
@@ -32,9 +32,7 @@ public class Video
 
         foreach (Comment com in _comments)
         {
-            string author = com._name; // Get commentor name from class directly
-            string text = com._text; // Get commentor comment from class directly
-            Console.WriteLine($"  - {author} says '{text}'");
+            com.DisplayComment();
         }
     }
 }
