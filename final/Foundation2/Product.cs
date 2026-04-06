@@ -7,11 +7,11 @@ public class Product
     // Attribute
     private string _name;
     private string _productID;
-    private float _unitCost;
+    private double _unitCost;
     private int _quantity; 
 
     // Constructor
-    public Product(string name, string productID, float unitCost, int quantity)
+    public Product(string name, string productID, double unitCost, int quantity)
     {
         _name = name;
         _productID = productID;
