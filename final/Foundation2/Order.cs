@@ -33,7 +33,16 @@ public class Order
 
     public float GetTotalCost()
     {
+        float cost = 0;
 
+        cost += GetShippingCost();
+
+        foreach (Product product in _products)
+        {
+            cost += product.GetTotalCost();
+        }
+
+        return cost;
     }
 
     public string GetShippingLabelString()
