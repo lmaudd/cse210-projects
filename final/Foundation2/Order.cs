@@ -31,9 +31,9 @@ public class Order
         }
     }
 
-    public float GetTotalCost()
+    public double GetTotalCost()
     {
-        float cost = 0;
+        double cost = 0;
 
         cost += GetShippingCost();
 
