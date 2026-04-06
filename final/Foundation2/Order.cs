@@ -18,21 +18,31 @@ public class Order
     // Methods
     private float GetShippingCost()
     {
-        
+        bool isInUSA = _customer.GetIsInUSA();
+
+        if (isInUSA == true)
+        {
+            return 5;
+        }
+
+        else
+        {
+            return 35;
+        }
     }
 
     public float GetTotalCost()
     {
-        
+
     }
 
     public string GetShippingLabelString()
     {
-        
+
     }
 
     public string GetPackingLabelString()
     {
-        
+
     }
 }
