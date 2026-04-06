@@ -29,6 +29,6 @@ public class Product
 
     public string GetNameAndID()
     {
-        return $"{_name} ({_productID})";
+        return $"{_name} ({_productID}) x{_quantity}";
     }
 }

@@ -53,7 +53,7 @@ public class Order
 
     public string GetPackingLabelString()
     {
-        string packingLabel = $"Packing Label\n:";
+        string packingLabel = $"Packing Label:\n";
 
         foreach (Product product in _products)
         {
