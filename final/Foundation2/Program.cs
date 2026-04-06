@@ -27,5 +27,18 @@ class Program
         {
             product1, product2, product3, product4, product5
         };
+
+        // Instantiate Order
+        Order order = new Order(customer, products);
+
+        // Test Class Methods
+        double orderCost = order.GetTotalCost();
+        Console.WriteLine($"\nTotal Cost: ${orderCost}");
+
+        string shippngLabel = order.GetShippingLabelString();
+        Console.WriteLine($"\n{shippngLabel}");
+
+        string packingLabel = order.GetPackingLabelString();
+        Console.WriteLine($"\n{packingLabel}\n");
     }
 }
