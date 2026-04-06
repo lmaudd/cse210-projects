@@ -47,11 +47,20 @@ public class Order
 
     public string GetShippingLabelString()
     {
-
+        string shippingLabel = _customer.GenerateShippingLabelString();
+        return shippingLabel;
     }
 
     public string GetPackingLabelString()
     {
+        string packingLabel = $"Packing Label\n:";
 
+        foreach (Product product in _products)
+        {
+            string nameAndID = product.GetNameAndID();
+            packingLabel += $"  - {nameAndID}\n";
+        }
+
+        return packingLabel;
     }
 }
