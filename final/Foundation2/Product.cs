@@ -1,5 +1,6 @@
+// https://learn.microsoft.com/en-us/dotnet/api/system.math.round?view=net-10.0
+
 using System;
-using System.Dynamic;
 
 public class Product
 {
@@ -19,8 +20,15 @@ public class Product
     }
 
     // Methods
-    public float GetTotalCost()
+    public double GetTotalCost()
     {
-        
+        double cost = _unitCost * _quantity;
+        double costRound = Math.Round(cost, 2);
+        return costRound;
+    }
+
+    public string GetNameAndID()
+    {
+        return $"{_name} ({_productID})";
     }
 }
