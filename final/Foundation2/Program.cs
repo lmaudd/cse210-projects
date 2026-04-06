@@ -8,7 +8,7 @@ class Program
         string streetAddress = "111 North Fake Street";
         string city = "City";
         string state = "State";
-        string country = "Country";
+        string country = "USA";
 
         Address address = new Address(streetAddress, city, state, country);
 
