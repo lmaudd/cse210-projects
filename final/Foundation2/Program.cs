@@ -4,11 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Order 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Instantiate Address
         string streetAddress = "111 North Fake Street";
         string city = "City";
         string state = "State";
-        string country = "USA";
+        string country = "Canada";
 
         Address address = new Address(streetAddress, city, state, country);
 
@@ -40,5 +41,43 @@ class Program
 
         string packingLabel = order.GetPackingLabelString();
         Console.WriteLine($"\n{packingLabel}\n");
+
+        // Order 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Instantiate Address
+        string streetAddress2 = "111 North Fake Street";
+        string city2 = "Rexburg";
+        string state2 = "ID";
+        string country2 = "USA";
+
+        Address address2 = new Address(streetAddress2, city2, state2, country2);
+
+        // Instiate Customer
+        string name2 = "Tom Hanks";
+        Customer customer2 = new Customer(name2, address2);
+
+        // Create List of Products
+        Product product12 = new Product("Slinky", "3473-0004", 2.99, 2);
+        Product product22 = new Product("Yo-Yo", "ej20-0002", 2.99, 1);
+        Product product32 = new Product("Hangers", "poll-gh89", 0.25, 60);
+        Product product42 = new Product("Doorknob", "sev7-0001", 22.99, 2);
+        Product product52 = new Product("Rug", "0090-aasr", 72.99, 1);
+
+        List<Product> products2 = new List<Product>
+        {
+            product12, product22, product32, product42, product52
+        };
+
+        // Instantiate Order
+        Order order2 = new Order(customer2, products2);
+
+        // Test Class Methods
+        double orderCost2 = order2.GetTotalCost();
+        Console.WriteLine($"\nTotal Cost: ${orderCost2}");
+
+        string shippngLabel2 = order2.GetShippingLabelString();
+        Console.WriteLine($"\n{shippngLabel2}");
+
+        string packingLabel2 = order2.GetPackingLabelString();
+        Console.WriteLine($"\n{packingLabel2}\n");
     }
 }
