@@ -3,7 +3,7 @@ using System;
 public class Running : Activity
 {
     // Attributes
-    private float _distance;
+    private float _distance; // Distance in miles
 
     // Constructor
     public Running(string date, float length, float distance) : base(date, length)
@@ -14,7 +14,7 @@ public class Running : Activity
     // Methods
     public override float GetDistance()
     {
-        return _distance;
+        return _distance; // in miles
     }
 
     public override string GetActivity()
