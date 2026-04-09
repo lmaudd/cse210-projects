@@ -1,6 +1,8 @@
 // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/virtual
+// https://learn.microsoft.com/en-us/dotnet/api/system.math.round?view=net-10.0 issue with decimals and floats I can't figure out
 
 using System;
+using System.Runtime.Intrinsics.X86;
 
 public class Activity
 {
