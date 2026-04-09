@@ -3,19 +3,20 @@ using System;
 public class Reception : Event
 {
     // Attributes
-    // N/A
+    private string _rsvpEmail;
 
     // Constructor
-    public Reception(string title, string description, string date, string time, Address address): 
+    public Reception(string title, string description, string date, string time, Address address, string rsvpEmail): 
         base(title, description, date, time, address)
     {
+        _rsvpEmail = rsvpEmail;
     }
 
     // Methods
     public string GetFullDetails()
     {
         string fullDetails = GetStandardDetails();
-        fullDetails += $"  - RSVP Email: put here"; // Add email for RSVP
+        fullDetails += $"  - RSVP Email: {_rsvpEmail}";
         return fullDetails;
     }
 
