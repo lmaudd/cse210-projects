@@ -16,12 +16,4 @@ public class Running : Activity
     {
         return _distance;
     }
-
-    public override float GetSpeed()
-    {
-        float length = GetLength();
-        float distance = GetDistance();
-        float speed = (distance / length) * 60;
-        return speed;
-    }
 }

@@ -20,12 +20,4 @@ public class Swimming : Activity
         double distance = _lapCount * 50 / 1000 * 0.62; // Distance in miles formula
         return (float)distance;
     }
-
-    public override float GetSpeed()
-    {
-        float length = GetLength();
-        float distance = GetDistance();
-        float speed = (distance / length) * 60;
-        return speed;
-    }
 }

@@ -27,7 +27,10 @@ public virtual class Activity
 
     public virtual float GetSpeed()
     {
-
+        float length = GetLength();
+        float distance = GetDistance();
+        float speed = (distance / length) * 60;
+        return speed;
     }
 
     public virtual float GetPace()
