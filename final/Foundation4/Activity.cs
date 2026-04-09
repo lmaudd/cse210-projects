@@ -15,13 +15,13 @@ public class Activity
         _length = length;
     }
 
-    // Getters
+    // Getters for parent variables
     public float GetLength()
     {
         return _length;
     }
     
-    // Methods
+    // Methods / Virtual Calculations
     public virtual float GetDistance()
     {
         float length = GetLength();
@@ -43,5 +43,20 @@ public class Activity
         float speed = GetSpeed();
         float pace = 60 / speed;
         return pace;
+    }
+
+    // Methods for Summary
+    public virtual string GetActivity()
+    {
+        return "";
+    }
+
+    public string GetSummary()
+    {
+        string activity = GetActivity();
+        float distance = GetDistance();
+        float speed = GetSpeed();
+        float pace = GetPace();
+        return $"{_date} {activity} ({_length} min): Distance {distance} miles, Speed {speed} mph, Pace {pace} min per mile";
     }
 }

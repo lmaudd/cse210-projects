@@ -16,4 +16,9 @@ public class Biking : Activity
     {
         return _speed;
     }
+
+    public override string GetActivity()
+    {
+        return "Biking";
+    }
 }

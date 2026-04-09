@@ -20,4 +20,9 @@ public class Swimming : Activity
         double distance = _lapCount * 50 / 1000 * 0.62; // Distance in miles formula
         return (float)distance;
     }
+
+    public override string GetActivity()
+    {
+        return "Swimming";
+    }
 }
