@@ -19,6 +19,13 @@ public class Event
         _address = address;
     }
 
-    // Methods
-    // ...
+    // Information Formatting Methods
+    public string GetStandardDetails()
+    {
+        return $"Event Details:\n  - {_title}\n  - {_description}\n  - {_date}\n  - {_time}\n  - {_address}";
+    }
+
+    public void GetFullDetails(){} // Drop to child classes
+
+    public void GetShortDescription(){} //Drop to child classes
 }
