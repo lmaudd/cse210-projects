@@ -25,14 +25,19 @@ public class Event
         return $"Event Details:\n  - Title: {_title}\n  - Description: {_description}\n  - Date: {_date}\n  - Time: {_time}\n  - Address:{_address}\n";
     }
 
-    // Getters (Necessary Only) for use in "Short description - Lists the type of event, title, and the date."
-    public string GetTitle()
+    // Methods for Short Description (reworked to avoid duplicate code)
+    public virtual string GetEventType()
     {
-        return _title;
+        return "";
     }
 
-    public string GetDate()
+    public string GetShortDescription()
     {
-        return _date;
+        string type = GetEventType();
+        string title = _title;
+        string date = _date;
+
+        string shortDescription = $"Short Description: {title} is a {type} Event on {date}.";
+        return shortDescription;
     }
 }

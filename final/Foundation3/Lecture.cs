@@ -23,12 +23,8 @@ public class Lecture : Event
         return fullDetails;
     }
 
-    public void GetShortDescription()
+    public override string GetEventType()
     {
-        string type = "Lecture";
-        string title = GetTitle();
-        string date = GetDate();
-
-        string shortDescription = $"Short Description: {title} is a {type} Event on {date}.";
+        return "Lecture";
     }
 }
