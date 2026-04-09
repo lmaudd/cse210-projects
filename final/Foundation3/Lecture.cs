@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 
 public class Lecture : Event
 {
@@ -22,5 +23,12 @@ public class Lecture : Event
         return fullDetails;
     }
 
-    public void GetShortDescription(){}
+    public void GetShortDescription()
+    {
+        string type = "Lecture";
+        string title = GetTitle();
+        string date = GetDate();
+
+        string shortDescription = $"Short Description: {title} is a {type} Event on {date}.";
+    }
 }
