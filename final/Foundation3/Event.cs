@@ -23,7 +23,7 @@ public class Event
     public string GetStandardDetails()
     {
         string address = _address.GetAddress();
-        return $"Event Details:\n  - Title: {_title}\n  - Description: {_description}\n  - Date: {_date}\n  - Time: {_time}\n  - Address:{address}\n";
+        return $"Event Details:\n  - Title: {_title}\n  - Description: {_description}\n  - Date: {_date}\n  - Time: {_time}\n  - Address: {address}\n";
     }
 
     // Methods for Short Description (reworked to avoid duplicate code)
