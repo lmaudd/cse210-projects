@@ -24,4 +24,15 @@ public class Event
     {
         return $"Event Details:\n  - Title: {_title}\n  - Description: {_description}\n  - Date: {_date}\n  - Time: {_time}\n  - Address:{_address}\n";
     }
+
+    // Getters (Necessary Only) for use in "Short description - Lists the type of event, title, and the date."
+    public string GetTitle()
+    {
+        return _title;
+    }
+
+    public string GetDate()
+    {
+        return _date;
+    }
 }
