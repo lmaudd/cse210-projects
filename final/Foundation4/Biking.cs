@@ -12,13 +12,6 @@ public class Biking : Activity
     }
     
     // Methods
-    public override float GetDistance()
-    {
-        float length = GetLength();
-        float distance = (_speed / 60) * length;
-        return distance;
-    }
-
     public override float GetSpeed()
     {
         return _speed;
