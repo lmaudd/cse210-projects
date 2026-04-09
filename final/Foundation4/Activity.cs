@@ -12,6 +12,12 @@ abstract class Activity
         _date = date;
         _length = length;
     }
+
+    // Getters
+    public float GetLength()
+    {
+        return _length;
+    }
     
     // Methods
     public abstract float GetDistance();
