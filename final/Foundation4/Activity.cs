@@ -1,6 +1,6 @@
 using System;
 
-public abstract class Activity
+public virtual class Activity
 {
     // Attributes
     private string _date;
@@ -20,7 +20,20 @@ public abstract class Activity
     }
     
     // Methods
-    public abstract float GetDistance();
-    public abstract float GetSpeed();
-    public abstract float GetPace();
+    public virtual float GetDistance()
+    {
+
+    }
+
+    public virtual float GetSpeed()
+    {
+
+    }
+
+    public virtual float GetPace()
+    {
+        float speed = GetSpeed();
+        float pace = 60 / speed;
+        return pace;
+    }
 }
