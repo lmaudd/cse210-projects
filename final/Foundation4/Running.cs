@@ -6,7 +6,7 @@ public class Running : Activity
     private float _distance;
 
     // Constructor
-    public Running(string date, float length, float distance) : (date, length)
+    public Running(string date, float length, float distance) : base(date, length)
     {
         _distance = distance;
     }
@@ -20,12 +20,14 @@ public class Running : Activity
     public override float GetSpeed()
     {
         float length = GetLength();
-        float speed = 1;
+        float speed = (_distance / length) * 60;
         return speed;
     }
 
     public override float GetPace()
     {
-        
+        float speed = GetSpeed();
+        float pace = 60 / speed;
+        return pace;
     }
 }
