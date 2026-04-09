@@ -6,7 +6,10 @@ public class Reception : Event
     // N/A
 
     // Constructor
-    // ...
+    public Reception(string title, string description, string date, string time, Address address): 
+        base(title, description, date, time, address)
+    {
+    }
 
     // Methods
     // ...

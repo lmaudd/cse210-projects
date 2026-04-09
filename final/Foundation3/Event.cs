@@ -10,7 +10,14 @@ public class Event
     private Address _address;
 
     // Constructor
-    // ...
+    public Event(string title, string description, string date, string time, Address address)
+    {
+        _title = title;
+        _description = description;
+        _date = date;
+        _time = time;
+        _address = address;
+    }
 
     // Methods
     // ...
