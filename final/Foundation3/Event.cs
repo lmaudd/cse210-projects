@@ -22,6 +22,6 @@ public class Event
     // Information Formatting Methods
     public string GetStandardDetails()
     {
-        return $"Event Details:\n  - {_title}\n  - {_description}\n  - {_date}\n  - {_time}\n  - {_address}";
+        return $"Event Details:\n  - Title: {_title}\n  - Description: {_description}\n  - Date: {_date}\n  - Time: {_time}\n  - Address:{_address}\n";
     }
 }

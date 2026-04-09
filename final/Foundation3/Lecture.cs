@@ -15,7 +15,12 @@ public class Lecture : Event
     }
 
     // Methods
-    public void GetFullDetails(){} // Drop to child classes
+    public string GetFullDetails()
+    {
+        string fullDetails = GetStandardDetails();
+        fullDetails += $"  - Speaker: {_speaker}\n  - Capacity: {_capacity}";
+        return fullDetails;
+    }
 
-    public void GetShortDescription(){} //Drop to child classes
+    public void GetShortDescription(){}
 }

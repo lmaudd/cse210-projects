@@ -12,7 +12,12 @@ public class Reception : Event
     }
 
     // Methods
-    public void GetFullDetails(){} // Drop to child classes
+    public string GetFullDetails()
+    {
+        string fullDetails = GetStandardDetails();
+        fullDetails += $"  - RSVP Email: put here"; // Add email for RSVP
+        return fullDetails;
+    }
 
     public void GetShortDescription(){} //Drop to child classes
 }

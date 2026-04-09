@@ -13,7 +13,12 @@ public class OutdoorGathering : Event
     }
 
     // Methods
-    public void GetFullDetails(){} // Drop to child classes
+    public string GetFullDetails()
+    {
+        string fullDetails = GetStandardDetails();
+        fullDetails += $"  - Expected Weather: {_weather}";
+        return fullDetails;
+    }
 
     public void GetShortDescription(){} //Drop to child classes
 }
