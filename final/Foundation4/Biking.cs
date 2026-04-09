@@ -6,9 +6,9 @@ public class Biking : Activity
     private float _speed;
 
     // Constructor
-    public Biking(string date, float length) : base(date, length)
+    public Biking(string date, float length, float speed) : base(date, length)
     {
-        // figure out what to do with speed...
+        _speed = speed;
     }
     
     // Methods
