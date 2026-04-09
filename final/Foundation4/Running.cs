@@ -20,7 +20,8 @@ public class Running : Activity
     public override float GetSpeed()
     {
         float length = GetLength();
-        float speed = (_distance / length) * 60;
+        float distance = GetDistance();
+        float speed = (distance / length) * 60;
         return speed;
     }
 }
