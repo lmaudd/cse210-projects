@@ -24,8 +24,4 @@ public class Event
     {
         return $"Event Details:\n  - {_title}\n  - {_description}\n  - {_date}\n  - {_time}\n  - {_address}";
     }
-
-    public void GetFullDetails(){} // Drop to child classes
-
-    public void GetShortDescription(){} //Drop to child classes
 }

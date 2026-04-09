@@ -15,5 +15,7 @@ public class Lecture : Event
     }
 
     // Methods
-    // ...
+    public void GetFullDetails(){} // Drop to child classes
+
+    public void GetShortDescription(){} //Drop to child classes
 }
