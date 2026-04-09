@@ -1,20 +1,38 @@
+// https://stackoverflow.com/questions/34090397/convert-double-to-float-by-cast-or-convert-tosingle
+
 using System;
 using System.ComponentModel;
 
-public class Swimming
+public class Swimming : Activity
 {
     // Attributes
     private int _lapCount;
 
     // Constructor
-    public Swimming(string date, float length)
+    public Swimming(string date, float length, int lapCount) : base(date, length)
     {
+        _lapCount = lapCount;
     }
     
     // Methods
-    public float GetDistance(){}
+    public override float GetDistance()
+    {
+        double distance = _lapCount * 50 / 1000 * 0.62; // Distance in miles formula
+        return (float)distance;
+    }
 
-    public float GetSpeed(){}
+    public override float GetSpeed()
+    {
+        float length = GetLength();
+        float distance = GetDistance();
+        float speed = (distance / length) * 60;
+        return speed;
+    }
 
-    public float GetPace(){}
+    public override float GetPace()
+    {
+        float speed = GetSpeed();
+        float pace = 60 / speed;
+        return pace;  
+    }
 }
