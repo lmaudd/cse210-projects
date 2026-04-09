@@ -1,6 +1,8 @@
+// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/virtual
+
 using System;
 
-public virtual class Activity
+public class Activity
 {
     // Attributes
     private string _date;
