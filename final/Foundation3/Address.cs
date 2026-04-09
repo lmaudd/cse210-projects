@@ -13,5 +13,8 @@ public class Address : Event
     }
 
     // Methods
-    // ...
+    public string GetAddress()
+    {
+        return _addressString;
+    }
 }
