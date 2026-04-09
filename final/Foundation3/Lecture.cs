@@ -8,11 +8,11 @@ public class Lecture : Event
     private int _capacity;
 
     // Constructor
-    public Lecture(string title, string description, string date, string time, Address address, string speaker, int capcacity): 
+    public Lecture(string title, string description, string date, string time, Address address, string speaker, int capacacity): 
         base(title, description, date, time, address)
     {
         _speaker = speaker;
-        _capacity = capcacity;
+        _capacity = capacacity;
     }
 
     // Methods

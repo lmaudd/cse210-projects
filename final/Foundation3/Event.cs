@@ -22,7 +22,8 @@ public class Event
     // Information Formatting Methods
     public string GetStandardDetails()
     {
-        return $"Event Details:\n  - Title: {_title}\n  - Description: {_description}\n  - Date: {_date}\n  - Time: {_time}\n  - Address:{_address}\n";
+        string address = _address.GetAddress();
+        return $"Event Details:\n  - Title: {_title}\n  - Description: {_description}\n  - Date: {_date}\n  - Time: {_time}\n  - Address:{address}\n";
     }
 
     // Methods for Short Description (reworked to avoid duplicate code)

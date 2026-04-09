@@ -1,20 +1,19 @@
 using System;
 
-public class Address : Event
+public class Address
 {
     // Attributes
-    private string _addressString;
+    private string _address;
 
     // Constructor
-    public Address(string title, string description, string date, string time, Address address, string addressString): 
-        base(title, description, date, time, address)
+    public Address(string address)
     {
-        _addressString = addressString;
+        _address = address;
     }
 
     // Methods
     public string GetAddress()
     {
-        return _addressString;
+        return _address;
     }
 }
