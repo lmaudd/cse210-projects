@@ -23,11 +23,4 @@ public class Biking : Activity
     {
         return _speed;
     }
-
-    public override float GetPace()
-    {
-        float speed = GetSpeed();
-        float pace = 60 / speed;
-        return pace;
-    }
 }

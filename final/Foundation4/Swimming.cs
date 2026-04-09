@@ -28,11 +28,4 @@ public class Swimming : Activity
         float speed = (distance / length) * 60;
         return speed;
     }
-
-    public override float GetPace()
-    {
-        float speed = GetSpeed();
-        float pace = 60 / speed;
-        return pace;  
-    }
 }
