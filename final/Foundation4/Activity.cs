@@ -1,6 +1,6 @@
 using System;
 
-abstract class Activity
+public abstract class Activity
 {
     // Attributes
     private string _date;
