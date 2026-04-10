@@ -80,7 +80,6 @@ class Activity
 
     public void PressEnter()
     {
-        Console.Write("\n Press enter continue: ");
         Console.ReadLine();
         Console.WriteLine();
     }

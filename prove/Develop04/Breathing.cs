@@ -19,7 +19,7 @@ class Breathing : Activity
     {
         Console.Clear(); // Empty console
         StartingMessage(); // Display header message
-
+        
         int seconds = InquireTime() ; // Ask how long to do activity and store
 
         Console.Clear(); // Empty console
