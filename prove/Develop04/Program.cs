@@ -4,18 +4,20 @@ class Program
 {
     static void Main(string[] args)
     {
-
+        Breathing a = new Breathing();
         Console.Clear();
 
-        DateTime start = DateTime.Now;
-        Thread.Sleep(3000);
+        // DateTime start = DateTime.Now;
+        // Thread.Sleep(3000);
 
-        DateTime stop = DateTime.Now;
+        // DateTime stop = DateTime.Now;
 
-        int difference = (int)stop.Ticks - (int)start.Ticks;
-        double seconds = difference * 0.0000001;
+        // int x = a.CalculateTimeChange(start, stop);
+        // Console.WriteLine(x); // Correctly outputed 3
 
+        // a.CountDown(6); // Works
 
-        Console.WriteLine($"{stop.Ticks} - {start.Ticks} = {difference} = {seconds}"); /// works!!!!!!!!
+        a.BreathingActivity();
+
     }   
 }

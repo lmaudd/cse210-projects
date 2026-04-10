@@ -38,7 +38,10 @@ class Activity
 
     public void EndingMessage(int duration) 
     {
+        Console.WriteLine("\nWell done!");
+        Spinner(3); 
         Console.WriteLine($"\nYou have completed another {duration} seconds of {_name}.\n");
+        Spinner(3); 
     }
 
     // Inquire about the time
@@ -66,7 +69,13 @@ class Activity
 
     public void CountDown(int timeSeconds)
     {
-        // Right code here...
+        while (timeSeconds > -1) // -1 to display 0
+        {
+            Console.Write(timeSeconds); // Write time
+            Thread.Sleep(1000); // Wait one second
+            Console.Write("\b \b"); // Erase time
+            timeSeconds--; // Decrease time by the second elapsed
+        }
     }
 
     public void PressEnter()
@@ -76,10 +85,11 @@ class Activity
         Console.WriteLine();
     }
 
-    public float CalculateTimeChange(DateTime startTime, DateTime endTime)
+    public int CalculateTimeChange(DateTime startTime, DateTime endTime)
     {   
-        int difference = (int)startTime.Ticks - (int)endTime.Ticks;
-        int seconds = difference * 10^-7;
-        return seconds;
+        int difference = (int)endTime.Ticks - (int)startTime.Ticks; // Calculate difference in ticks
+        double seconds = difference * 0.0000001; // Convert ticks (100 nanoseconds) to seconds
+        int secondsInt = (int)seconds; // Convert to int (precision here isn't needed and this will simplify comparisons
+        return secondsInt;
     }
 }
