@@ -74,5 +74,6 @@ class Listing : Activity
 
         EndingMessage(seconds);
         Console.WriteLine($"You came up with {i} things!\n");
+        Spinner(3);
     }
 }
