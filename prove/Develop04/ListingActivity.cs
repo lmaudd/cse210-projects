@@ -1,20 +1,24 @@
-// using System;
+using System;
 
-// class ListingActivity
-// {
-//     // Attributes
-//     private string _listingDecription;
-//     private List<string> _prompts;
-//     private int _numItems;
+class Listing : Activity
+{
+    // Attributes
+    private List<string> _prompts;
 
-//     // Methods
-//     private string GetPrompt()
-//     {
+    // Constructor
+    public Listing(string name, string description): base(name, description)
+    {
+        _prompts = new List<String> {}; // Add things to list
+    }
 
-//     }
+    // Methods
+    private string GetPrompt()
+    {
 
-//     public void InitiateActivity()
-//     {
+    }
 
-//     }
-// }
+    public void InitiateActivity()
+    {
+
+    }
+}

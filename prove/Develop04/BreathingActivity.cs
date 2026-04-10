@@ -1,12 +1,17 @@
 using System;
 
-class BreathingActivity
+class Breathing : Activity
 {
     // Attributes
-    private string _breathingDecription;
+    // N/A
+
+    // Constructor
+    public Breathing(string name, string description): base(name, description)
+    {
+    }
 
     // Methods
-    public void InitiateActivity()
+    public void BreathingActivity()
     {
 
     }

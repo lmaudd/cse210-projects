@@ -1,31 +1,45 @@
 // https://numerics.net/documentation/latest/reference/numerics.net.curves.surfaces.gridboundarycondition.periodic
 
 using System;
+using System.Xml.Serialization;
 
 class Activity
 {
-    // Attributes
-    public string _activityName;
-    protected int _duration;
+    // Attributes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    private string _name; // Activity Name
+    private string _description; // Description of activity
+    private int _duration; // User chosen duration
 
-    // Methods
-    public Activity(string activityName)
+    // Constructor ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public Activity(string name, string description)
     {
-        _activityName = activityName;
+        _name = name;
+        _description = description;
         _duration = -1;
     }
 
+    // Start & Finish Messages ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public void StartingMessage()
     {
-        Console.WriteLine($"\nWelcome to the {_activityName}.");
+        Console.WriteLine($"\nWelcome to the {_name}.");
     }
 
     public void EndingMessage() 
     {
-        Console.WriteLine($"\nYou have completed another {_duration} seconds of {_activityName}.\n");
+        Console.WriteLine($"\nYou have completed another {_duration} seconds of {_name}.\n");
     }
 
-    public void PauseAnimation(int timeSeconds) 
+    // Inquire about the time ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public void InquireTime() 
+    {
+        Console.Write("\nIn seconds, how long would you like your session to be? ");
+        string userInput = Console.ReadLine();
+        int durationSeconds = Int32.Parse(userInput);
+        _duration = durationSeconds;
+    }
+
+    // Activity Timers, Spinners ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public void Spinner(int timeSeconds) 
     {
         List<char> temp = new List<char> {'|', '/', '-', '\\'};
 
@@ -38,12 +52,9 @@ class Activity
         }
     }
 
-    public void InquireTime() 
+    public void CountDown(int timeSeconds)
     {
-        Console.Write("\nIn seconds, how long would you like your session to be? ");
-        string userInput = Console.ReadLine();
-        int durationSeconds = Int32.Parse(userInput);
-        _duration = durationSeconds;
+        // Right code here...
     }
 
     public void PressEnter()
@@ -51,15 +62,5 @@ class Activity
         Console.Write("\n Press enter continue: ");
         Console.ReadLine();
         Console.WriteLine();
-    }
-
-    public int GetDuration() 
-    {
-        return _duration;
-    }
-
-    public bool CheckTime() 
-    {
-        return true;
     }
 }
